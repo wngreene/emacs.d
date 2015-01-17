@@ -146,6 +146,10 @@
 (add-to-list 'company-backends 'company-c-headers)
 (add-to-list 'company-c-headers-path-system "/usr/include/c++/4.8/")
 
+;; Magit.
+(require 'magit)
+(global-set-key (kbd "C-c g") 'magit-status)
+
 ;; Stuff to run when a window is present.
 (when window-system 
 ;; Set theme.
