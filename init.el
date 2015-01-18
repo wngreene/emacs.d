@@ -64,7 +64,7 @@
 ; Fill column indicator.
 (require 'fill-column-indicator)
 (add-hook 'after-change-major-mode-hook 'fci-mode)
-'(fci-rule-column 80)
+(setq fci-rule-column 80)
 
 ;; File associations.
 ;;(require 'xml)
@@ -156,6 +156,10 @@
 ;; Magit.
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; Jedi.
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
 
 ;; Stuff to run when a window is present.
 (when window-system 
