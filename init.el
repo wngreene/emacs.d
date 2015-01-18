@@ -31,7 +31,13 @@
 
 ;; scrollers.
 (global-set-key (kbd "<s-down>") "\C-u1\C-v")
+
+;; Window resizing.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
+    (global-set-key (kbd "C-s-<left>") 'shrink-window-horizontally)
+    (global-set-key (kbd "C-s-<right>") 'enlarge-window-horizontally)
+    (global-set-key (kbd "C-s-<down>") 'shrink-window)
+    (global-set-key (kbd "C-s-<up>") 'enlarge-window)
 
 ;; Tab width
 (setq tab-width 2)
