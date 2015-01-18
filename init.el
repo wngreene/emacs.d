@@ -58,6 +58,7 @@
 ; Fill column indicator.
 (require 'fill-column-indicator)
 (add-hook 'after-change-major-mode-hook 'fci-mode)
+'(fci-rule-column 80)
 
 ;; File associations.
 ;;(require 'xml)
@@ -148,7 +149,7 @@
 
 ;; Magit.
 (require 'magit)
-(global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Stuff to run when a window is present.
 (when window-system 
