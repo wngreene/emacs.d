@@ -34,13 +34,13 @@
 
 ;; Window resizing.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
-    (global-set-key (kbd "C-s-<left>") 'shrink-window-horizontally)
-    (global-set-key (kbd "C-s-<right>") 'enlarge-window-horizontally)
-    (global-set-key (kbd "C-s-<down>") 'shrink-window)
-    (global-set-key (kbd "C-s-<up>") 'enlarge-window)
+(global-set-key (kbd "C-s-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "C-s-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-s-<down>") 'shrink-window)
+(global-set-key (kbd "C-s-<up>") 'enlarge-window)
 
 ;; Tab width
-(setq tab-width 2)
+(setq-default tab-width 2)
 
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
@@ -131,6 +131,7 @@
 (define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
 (define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
 (define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
+(define-key ggtags-mode-map (kbd "C-c g d") 'ggtags-find-definition)
 (define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
 (define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
 (define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
