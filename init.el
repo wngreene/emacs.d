@@ -62,9 +62,9 @@
 (require 'cmake-mode) 
 
 ; Fill column indicator.
-(require 'fill-column-indicator)
-(add-hook 'after-change-major-mode-hook 'fci-mode)
-(setq fci-rule-column 80)
+;;(require 'fill-column-indicator)
+;;(add-hook 'after-change-major-mode-hook 'fci-mode)
+;;(setq fci-rule-column 80)
 
 ;; File associations.
 ;;(require 'xml)
