@@ -29,8 +29,10 @@
 ;; Auto refresh.
 (global-auto-revert-mode t)
 
-;; scrollers.
+;; Navigation.
 (global-set-key (kbd "<s-down>") "\C-u1\C-v")
+(global-set-key (kbd "C-M-n") 'forward-paragraph)
+(global-set-key (kbd "C-M-p") 'backward-paragraph)
 
 ;; Window resizing.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
