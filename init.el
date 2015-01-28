@@ -36,8 +36,8 @@
 (global-set-key (kbd "M-s-p") "\C-u1\M-v")
 (global-set-key (kbd "M-s-n") "\C-u1\C-v")
 
-(global-set-key (kbd "C-M-n") 'forward-paragraph)
-(global-set-key (kbd "C-M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "M-p") 'backward-paragraph)
 
 ;; Window resizing.
 (global-set-key (kbd "C-s-<left>") 'shrink-window-horizontally)
