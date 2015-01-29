@@ -45,6 +45,10 @@
 (global-set-key (kbd "C-s-<down>") 'shrink-window)
 (global-set-key (kbd "C-s-<up>") 'enlarge-window)
 
+;; Commenting.
+(global-set-key (kbd "C-c C-c") 'comment-region)
+(global-set-key (kbd "C-c C-u") 'uncomment-region)
+
 ;; Tab width
 (setq-default tab-width 2)
 
