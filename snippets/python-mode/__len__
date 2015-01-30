@@ -4,4 +4,4 @@
 # group: dunder methods
 # --
 def __len__(self):
-  $0
+    $0

@@ -4,4 +4,4 @@
 # group: argparser
 # --
 parser.add_argument('-$1', '--$2',
-          $0)
+                    $0)

@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: function
 # key: f
-# group: definitions
 # --
-def ${1:fun}(${2:args}):
-    $0
+${1:type} ${3:name}(${4:args}) {
+  $0
+}

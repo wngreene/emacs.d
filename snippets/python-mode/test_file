@@ -9,4 +9,4 @@ ${1:from ${2:test_file} import *}
 $0
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()

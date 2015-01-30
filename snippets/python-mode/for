@@ -3,4 +3,4 @@
 # group : control structure
 # --
 for ${var} in ${collection}:
-  $0
+    $0

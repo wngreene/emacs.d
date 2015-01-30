@@ -4,4 +4,4 @@
 # group: testing
 # --
 class ${1:Model}Test(TestCase):
-  $0
+    $0

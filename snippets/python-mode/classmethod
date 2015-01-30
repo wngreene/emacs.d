@@ -5,4 +5,4 @@
 # --
 @classmethod
 def ${1:meth}(cls, $0):
-  
+    

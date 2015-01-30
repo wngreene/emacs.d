@@ -4,4 +4,4 @@
 # group: dunder methods
 # --
 def __iter__(self):
-  return ${1:iter($2)}
+    return ${1:iter($2)}

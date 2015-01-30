@@ -3,4 +3,4 @@
 # key: main
 # --
 def main():
-  $0
+    $0
