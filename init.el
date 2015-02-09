@@ -52,6 +52,9 @@
 ;; Tab width
 (setq-default tab-width 2)
 
+;; Don't indent in namespaces.
+(c-set-offset 'innamespace 0)
+
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 
@@ -80,6 +83,7 @@
 ;;(require 'xml)
 (add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
 
 ;; Markdown mode.
 (add-to-list 'load-path "~/.emacs.d/markdown-mode/")
