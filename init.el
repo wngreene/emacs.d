@@ -79,6 +79,9 @@
 ;;(add-hook 'after-change-major-mode-hook 'fci-mode)
 ;;(setq fci-rule-column 80)
 
+;; Column number mode.
+(column-number-mode 1)
+
 ;; File associations.
 ;;(require 'xml)
 (add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
