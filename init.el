@@ -104,11 +104,16 @@
 ;;(add-hook 'after-change-major-mode-hook 'fci-mode)
 ;;(setq fci-rule-column 80)
 
+;; Column number mode.
+(column-number-mode 1)
+
 ;; File associations.
 ;;(require 'xml)
 (add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cl\\'" . c++-mode))
 
 ;; Markdown mode.
 (add-to-list 'load-path "~/.emacs.d/markdown-mode/")
@@ -200,6 +205,10 @@
 ;; Jedi.
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+
+;; Graphiviz mode.
+(add-to-list 'load-path "~/.emacs.d/graphviz-dot-mode/")
+(require 'graphviz-dot-mode)
 
 ;; Stuff to run when a window is present.
 (when window-system 
