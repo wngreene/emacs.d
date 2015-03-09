@@ -224,6 +224,37 @@
           (add-hook 'python-mode-hook 'ws-butler-mode)
           (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
+;; Helm.
+(use-package helm
+  :config (progn
+          (helm-autoresize-mode 1))
+  :bind (("M-x"     . helm-M-x)
+         ("C-x C-b" . helm-buffers-list)
+         ("C-x C-f" . helm-find-files)))
+
+;; Projectile.
+(use-package projectile
+  :commands (projectile-global-mode)
+  :init (progn
+          (projectile-global-mode))
+  :config (progn
+            (setq projectile-completion-system 'helm)
+            (setq projectile-switch-project-action 'helm-projectile)
+            (setq projectile-indexing-method 'native)
+            ))
+
+;; Semantic.
+(require 'semantic)
+(require 'semantic/bovine/gcc)
+(semantic-mode 1)
+(global-ede-mode t)
+(ede-enable-generic-projects)
+
+(add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
+
 ;; Stuff to run when a window is present.
 (when window-system 
 ;; Set theme.
