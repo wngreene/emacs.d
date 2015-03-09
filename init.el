@@ -185,22 +185,6 @@
 (define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
 (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
 
-;; Company.
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-(global-set-key (kbd "<C-tab>") 'company-complete)
-;;(define-key company-active-map (kbd "<C-e>") #'company-other-backend)
-(setq company-idle-delay 0.1)
-
-(setq company-backends (delete 'company-semantic company-backends))
-;;(define-key c-mode-map  (kbd "<C-tab>") 'company-complete)
-;;(define-key c++-mode-map (kbd "<C-tab>") 'company-complete)
-
-;; Company C/C++ Headers.
-(require 'company-c-headers)
-(add-to-list 'company-backends 'company-c-headers)
-(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.8/")
-
 ;; Magit.
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
