@@ -56,6 +56,11 @@
 ;; CMake
 (require 'cmake-mode) 
 
+;; auto-complete.
+(require 'auto-complete)
+(auto-complete-mode 1)
+(global-set-key (kbd "<C-tab>") 'auto-complete)
+
 ; Fill column indicator.
 ;; (require 'fill-column-indicator)
 ;; (add-hook 'after-change-major-mode-hook 'fci-mode)
@@ -237,7 +242,7 @@
 
 (semantic-mode 1)
 
-(global-set-key (kbd "<C-tab>") 'semantic-complete-analyze-inline)
+;; (global-set-key (kbd "<C-tab>") 'semantic-complete-analyze-inline)
 
 ;; EDE.
 (require 'ede)
