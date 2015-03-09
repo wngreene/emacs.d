@@ -253,6 +253,11 @@
 ;;             (define-key cc-mode-map (kbd "<C-tab>") 'moo-complete)
 ;;             (define-key cc-mode-map (kbd "M-o" 'fa-show))))
 
+;; rosemacs.
+(add-to-list 'load-path "/opt/ros/indigo/share/emacs/site-lisp")
+;; or whatever your install space is + "/share/emacs/site-lisp"
+(require 'rosemacs-config)
+
 ;; Stuff to run when a window is present.
 (when window-system 
 ;; Set theme.
