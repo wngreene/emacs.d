@@ -27,7 +27,6 @@
  '(minimap-always-recenter t)
  '(minimap-recenter-type (quote relative))
  '(minimap-window-location (quote right))
- '(safe-local-variable-values (quote ((company-clang-arguments "-I/home/wng/Projects/rrg/install/include" "-I/home/wng/Projects/rrg/camera_flycap2_driver/src/"))))
  '(use-file-dialog nil))
 
 ;; Auto refresh.
