@@ -14,6 +14,10 @@
 (add-to-list 'package-archives 
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
+;; use-package.
+(add-to-list 'load-path "~/.emacs.d/use-package/")
+(require 'use-package)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -208,7 +212,18 @@
 
 ;; Graphiviz mode.
 (add-to-list 'load-path "~/.emacs.d/graphviz-dot-mode/")
-(require 'graphviz-dot-mode)
+(require 'graphviz-dot-mode) 
+
+;; Whitespace butler.
+(add-to-list 'load-path "~/.emacs.d/ws-butler/")
+(use-package ws-butler
+  :commands ws-butler-mode
+  :init (progn
+          (add-hook 'c-mode-common-hook 'ws-butler-mode)
+          (add-hook 'cc-mode-common-hook 'ws-butler-mode)
+          (add-hook 'c++-mode-common-hook 'ws-butler-mode)
+          (add-hook 'python-mode-hook 'ws-butler-mode)
+          (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
 ;; Stuff to run when a window is present.
 (when window-system 

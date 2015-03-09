@@ -4,3 +4,9 @@
 [submodule "graphviz-dot-mode"]
 	path = graphviz-dot-mode
 	url = https://github.com/ppareit/graphviz-dot-mode.git
+[submodule "ws-butler"]
+	path = ws-butler
+	url = https://github.com/lewang/ws-butler.git
+[submodule "use-package"]
+	path = use-package
+	url = https://github.com/jwiegley/use-package.git
