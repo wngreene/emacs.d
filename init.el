@@ -57,9 +57,9 @@
 (require 'cmake-mode) 
 
 ; Fill column indicator.
-(require 'fill-column-indicator)
-(add-hook 'after-change-major-mode-hook 'fci-mode)
-(setq fci-rule-column 80)
+;; (require 'fill-column-indicator)
+;; (add-hook 'after-change-major-mode-hook 'fci-mode)
+;; (setq fci-rule-column 80)
 
 ;; Column number mode.
 (column-number-mode 1)
@@ -237,16 +237,17 @@
 
 (semantic-mode 1)
 
-(global-set-key (kbd "<C-tab>") 'semantic-ia-complete-symbol)
+(global-set-key (kbd "<C-tab>") 'semantic-complete-analyze-inline)
 
-(semantic-add-system-include "/home/wng/Projects/rrg/install")
-
-;; (global-ede-mode t)
-;; (ede-enable-generic-projects)
+;; EDE.
+(require 'ede)
+(global-ede-mode t)
+(ede-enable-generic-projects)
 
 ;; Function args.
 (require 'function-args)
 (fa-config-default)
+
 ;; (add-hook 'cc-mode-hook
 ;;           (lambda ()
 ;;             (define-key cc-mode-map (kbd "<C-tab>") 'moo-complete)
