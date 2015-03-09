@@ -32,6 +32,39 @@
 ;; Auto refresh.
 (global-auto-revert-mode t)
 
+;; Tab width
+(setq-default tab-width 2)
+
+;; Don't indent in namespaces.
+(c-set-offset 'innamespace 0)
+
+;; Use spaces instead of tabs.
+(setq-default indent-tabs-mode nil)
+
+;; Set line numbers.
+(require 'linum)
+(global-linum-mode)
+
+;; Show parentheses.
+(require 'paren)
+(show-paren-mode 1)
+
+;; Use windmove to move cursor around split panes.
+;; shift + arrow keys
+(require 'windmove)
+
+;; CMake
+(require 'cmake-mode) 
+
+; Fill column indicator.
+(require 'fill-column-indicator)
+(add-hook 'after-change-major-mode-hook 'fci-mode)
+(setq fci-rule-column 80)
+
+;; Column number mode.
+(column-number-mode 1)
+(windmove-default-keybindings 'meta)
+
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
 (global-set-key (kbd "<s-down>") "\C-u1\C-v")
@@ -75,40 +108,6 @@
             (define-key latex-mode-map "(" 'electric-pair)
             (define-key latex-mode-map "[" 'electric-pair)
             (define-key latex-mode-map "{" 'electric-pair)))
-
-
-;; Tab width
-(setq-default tab-width 2)
-
-;; Don't indent in namespaces.
-(c-set-offset 'innamespace 0)
-
-;; Use spaces instead of tabs.
-(setq-default indent-tabs-mode nil)
-
-;; Set line numbers.
-(require 'linum)
-(global-linum-mode)
-
-;; Show parentheses.
-(require 'paren)
-(show-paren-mode 1)
-
-;; Use windmove to move cursor around split panes.
-;; shift + arrow keys
-(require 'windmove)
-(windmove-default-keybindings 'meta)
-
-;; CMake
-(require 'cmake-mode) 
-
-; Fill column indicator.
-;;(require 'fill-column-indicator)
-;;(add-hook 'after-change-major-mode-hook 'fci-mode)
-;;(setq fci-rule-column 80)
-
-;; Column number mode.
-(column-number-mode 1)
 
 ;; File associations.
 ;;(require 'xml)
@@ -231,14 +230,27 @@
 ;; Semantic.
 (require 'semantic)
 (require 'semantic/bovine/gcc)
-(semantic-mode 1)
-(global-ede-mode t)
-(ede-enable-generic-projects)
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+(global-semantic-idle-summary-mode 1)
+(global-semantic-idle-local-symbol-highlight-mode 1)
 
-(add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
-(add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
-(add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
-(add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
+(semantic-mode 1)
+
+(global-set-key (kbd "<C-tab>") 'semantic-ia-complete-symbol)
+
+(semantic-add-system-include "/home/wng/Projects/rrg/install")
+
+;; (global-ede-mode t)
+;; (ede-enable-generic-projects)
+
+;; Function args.
+(require 'function-args)
+(fa-config-default)
+;; (add-hook 'cc-mode-hook
+;;           (lambda ()
+;;             (define-key cc-mode-map (kbd "<C-tab>") 'moo-complete)
+;;             (define-key cc-mode-map (kbd "M-o" 'fa-show))))
 
 ;; Stuff to run when a window is present.
 (when window-system 
