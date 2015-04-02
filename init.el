@@ -70,6 +70,12 @@
 (column-number-mode 1)
 (windmove-default-keybindings 'meta)
 
+;; Stop using arrow keys.
+(global-unset-key [left])
+(global-unset-key [right])
+(global-unset-key [up])
+(global-unset-key [down])
+
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
 (global-set-key (kbd "<s-down>") "\C-u1\C-v")
@@ -81,10 +87,10 @@
 (global-set-key (kbd "M-p") 'backward-paragraph)
 
 ;; Window resizing.
-(global-set-key (kbd "C-s-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "C-s-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-s-<down>") 'shrink-window)
-(global-set-key (kbd "C-s-<up>") 'enlarge-window)
+(global-set-key (kbd "C-s-b") 'shrink-window-horizontally)
+(global-set-key (kbd "C-s-f") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-s-p") 'shrink-window)
+(global-set-key (kbd "C-s-n") 'enlarge-window)
 
 ;; Commenting.
 (global-set-key (kbd "C-c C-c") 'comment-region)
