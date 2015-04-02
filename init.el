@@ -17,7 +17,7 @@
 ;; use-package.
 (add-to-list 'load-path "~/.emacs.d/use-package/")
 (require 'use-package)
-
+n
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -77,8 +77,8 @@
 (global-unset-key [down])
 
 ;; Navigation.
-(global-set-key (kbd "<s-up>") "\C-u1\M-v")
-(global-set-key (kbd "<s-down>") "\C-u1\C-v")
+;; (global-set-key (kbd "<s-up>") "\C-u1\M-v")
+;; (global-set-key (kbd "<s-down>") "\C-u1\C-v")
 
 (global-set-key (kbd "M-s-p") "\C-u1\M-v")
 (global-set-key (kbd "M-s-n") "\C-u1\C-v")
