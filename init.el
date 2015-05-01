@@ -17,7 +17,7 @@
 ;; use-package.
 (add-to-list 'load-path "~/.emacs.d/use-package/")
 (require 'use-package)
-n
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -56,11 +56,6 @@ n
 ;; CMake
 (require 'cmake-mode) 
 
-;; auto-complete.
-(require 'auto-complete)
-(auto-complete-mode 1)
-(global-set-key (kbd "<C-tab>") 'auto-complete)
-
 ; Fill column indicator.
 ;; (require 'fill-column-indicator)
 ;; (add-hook 'after-change-major-mode-hook 'fci-mode)
@@ -70,21 +65,15 @@ n
 (column-number-mode 1)
 (windmove-default-keybindings 'meta)
 
-;; Stop using arrow keys.
-(global-unset-key [left])
-(global-unset-key [right])
-(global-unset-key [up])
-(global-unset-key [down])
-
 ;; Navigation.
-;; (global-set-key (kbd "<s-up>") "\C-u1\M-v")
-;; (global-set-key (kbd "<s-down>") "\C-u1\C-v")
+(global-set-key (kbd "<s-up>") "\C-u1\M-v")
+(global-set-key (kbd "<s-down>") "\C-u1\C-v")
 
 (global-set-key (kbd "M-s-p") "\C-u1\M-v")
 (global-set-key (kbd "M-s-n") "\C-u1\C-v")
 
-(global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 
 ;; Window resizing.
 (global-set-key (kbd "C-s-b") 'shrink-window-horizontally)
@@ -98,13 +87,13 @@ n
 
 ;; Pair completion.
 (electric-pair-mode 1)
-(add-hook 'python-mode-hook
-          (lambda ()
-            (define-key python-mode-map "\"" 'electric-pair)
-            (define-key python-mode-map "\'" 'electric-pair)
-            (define-key python-mode-map "(" 'electric-pair)
-            (define-key python-mode-map "[" 'electric-pair)
-            (define-key python-mode-map "{" 'electric-pair)))
+;; (add-hook 'python-mode-hook
+;;           (lambda ()
+;;             (define-key python-mode-map "\"" 'electric-pair)
+;;             (define-key python-mode-map "\'" 'electric-pair)
+;;             (define-key python-mode-map "(" 'electric-pair)
+;;             (define-key python-mode-map "[" 'electric-pair)
+;;             (define-key python-mode-map "{" 'electric-pair)))
 (add-hook 'cc-mode-hook
           (lambda ()
             (define-key cc-mode-map "\"" 'electric-pair)
@@ -268,6 +257,11 @@ n
 (add-to-list 'load-path "/opt/ros/indigo/share/emacs/site-lisp")
 ;; or whatever your install space is + "/share/emacs/site-lisp"
 (require 'rosemacs-config)
+
+;; auto-complete.
+(require 'auto-complete)
+(global-auto-complete-mode 1)
+(global-set-key (kbd "<C-tab>") 'auto-complete)
 
 ;; Stuff to run when a window is present.
 (when window-system 
