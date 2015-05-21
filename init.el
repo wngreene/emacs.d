@@ -168,22 +168,6 @@
 '(flycheck-googlelint-root "project/src")
 '(flycheck-googlelint-linelength "80")
 
-;; GGtags.
-(require 'ggtags)
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'python-mode)
-              (ggtags-mode 1))))
-(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
-(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
-(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
-(define-key ggtags-mode-map (kbd "C-c g d") 'ggtags-find-definition)
-(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
-(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
-(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
-(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
-(setq-local imenu-create-index-function #'ggtags-build-imenu-index)
-
 ;; Magit.
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -227,37 +211,6 @@
             (setq projectile-indexing-method 'native)
             ))
 
-;; Semantic.
-(require 'semantic)
-(require 'semantic/bovine/gcc)
-(global-semanticdb-minor-mode 1)
-(global-semantic-idle-scheduler-mode 1)
-(global-semantic-idle-summary-mode 1)
-(global-semantic-idle-local-symbol-highlight-mode 1)
-
-(semantic-mode 1)
-
-;; (global-set-key (kbd "<C-tab>") 'semantic-complete-analyze-inline)
-
-;; EDE.
-(require 'ede)
-(global-ede-mode t)
-(ede-enable-generic-projects)
-
-;; Function args.
-(require 'function-args)
-(fa-config-default)
-
-;; (add-hook 'cc-mode-hook
-;;           (lambda ()
-;;             (define-key cc-mode-map (kbd "<C-tab>") 'moo-complete)
-;;             (define-key cc-mode-map (kbd "M-o" 'fa-show))))
-
-;; rosemacs.
-(add-to-list 'load-path "/opt/ros/indigo/share/emacs/site-lisp")
-;; or whatever your install space is + "/share/emacs/site-lisp"
-(require 'rosemacs-config)
-
 ;; auto-complete.
 (require 'auto-complete)
 (global-auto-complete-mode 1)
@@ -287,20 +240,3 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#272822" :foreground "#F8F8F2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 85 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 )
-
-;; speedbar
-;; ========
-;; (when window-system
-;;   (speedbar t))
-
-;; ;; jump to speedbar frame
-;; (global-set-key (kbd "<f4>") 'speedbar-get-focus)
-
-;; sr-speedbar
-;; (add-to-list 'load-path "~/.emacs.d/sr-speedbar/")
-;; (require 'sr-speedbar)
-;; (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
-
-;; (sr-speedbar-open)
-;; (with-current-buffer sr-speedbar-buffer-name
-;;   (setq window-size-fixed 'width))
