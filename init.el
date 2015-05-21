@@ -164,8 +164,8 @@
 (require 'graphviz-dot-mode) 
 
 ;; Whitespace butler.
-(add-to-list 'load-path "~/.emacs.d/ws-butler/")
 (use-package ws-butler
+  :load-path "~/.emacs.d/ws-butler/"
   :commands ws-butler-mode
   :init (progn
           (add-hook 'c-mode-common-hook 'ws-butler-mode)
@@ -176,6 +176,7 @@
 
 ;; Helm.
 (use-package helm
+  :ensure t
   :config (progn
           (helm-autoresize-mode 1))
   :bind (("M-x"     . helm-M-x)
@@ -184,7 +185,7 @@
 
 ;; Projectile.
 (use-package projectile
-  :commands (projectile-global-mode)
+  :ensure t
   :init (progn
           (projectile-global-mode))
   :config (progn
