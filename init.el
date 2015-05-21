@@ -15,7 +15,10 @@
 
 ;; use-package.
 (add-to-list 'load-path "~/.emacs.d/use-package/")
-(require 'use-package)
+
+
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
