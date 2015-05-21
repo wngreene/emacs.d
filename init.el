@@ -85,28 +85,8 @@
 (global-set-key (kbd "C-S-c C-S-c") 'uncomment-region)
 
 ;; Pair completion.
-(electric-pair-mode 1)
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (define-key python-mode-map "\"" 'electric-pair)
-;;             (define-key python-mode-map "\'" 'electric-pair)
-;;             (define-key python-mode-map "(" 'electric-pair)
-;;             (define-key python-mode-map "[" 'electric-pair)
-;;             (define-key python-mode-map "{" 'electric-pair)))
-(add-hook 'cc-mode-hook
-          (lambda ()
-            (define-key cc-mode-map "\"" 'electric-pair)
-            (define-key cc-mode-map "\'" 'electric-pair)
-            (define-key cc-mode-map "(" 'electric-pair)
-            (define-key cc-mode-map "[" 'electric-pair)
-            (define-key cc-mode-map "{" 'electric-pair)))
-(add-hook 'latex-mode-hook
-          (lambda ()
-            (define-key latex-mode-map "\"" 'electric-pair)
-            (define-key latex-mode-map "\'" 'electric-pair)
-            (define-key latex-mode-map "(" 'electric-pair)
-            (define-key latex-mode-map "[" 'electric-pair)
-            (define-key latex-mode-map "{" 'electric-pair)))
+(smartparens-global-mode t)
+(require 'smartparens-config)
 
 ;; File associations.
 ;;(require 'xml)
