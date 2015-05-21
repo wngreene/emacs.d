@@ -88,6 +88,9 @@
 (smartparens-global-mode t)
 (require 'smartparens-config)
 
+;; Rainbow delimiters.
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 ;; File associations.
 ;;(require 'xml)
 (add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
