@@ -1,24 +1,23 @@
 ;;; .emacs.s/init.el --- wng init file.
 
 ;;; Code:
+
+;; Set up use-package.
 (require 'package)
 (setq package-enable-at-startup nil)
+
+;; Add repos.
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
+
 (package-initialize)
 
-;; Add the Melpa repo.
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-;; Add the Marmalade repo.
-(add-to-list 'package-archives 
-	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
-
-;; use-package.
-(add-to-list 'load-path "~/.emacs.d/use-package/")
-
-
-
-
+;; Bootstrap use-package.
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
