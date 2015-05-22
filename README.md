@@ -1,6 +1,6 @@
 # emacs.d
 
-My emacs configuration. Checkout this repo to your home directory
+W. Nicholas Greene's emacs configuration. Checkout this repo to your home directory
 (including submodules) as `.emacs.d` and launch emacs. It should grab
 the required packages from MELPA:
 
