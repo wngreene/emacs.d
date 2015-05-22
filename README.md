@@ -12,7 +12,7 @@ git submodule update --init Highlight-Indentation-for-Emacs
 emacs . &
 ```
 
-Requires:
+### Requires:
 - emacs24
 - cpplint.py
 
