@@ -109,15 +109,16 @@
 )
 
 ;; Indent highlighting.
-(add-to-list 'load-path "~/.emacs.d/Highlight-Indentation-for-Emacs/")
-(require 'highlight-indentation)
-(highlight-indentation-mode 1)
-(add-hook 'c-mode-hook 'highlight-indentation-mode)
-(add-hook 'c++-mode-hook 'highlight-indentation-mode)
-(add-hook 'python-mode-hook 'highlight-indentation-mode)
-(add-hook 'xml-mode-hook 'highlight-indentation-mode)
-(add-hook 'java-mode-hook 'highlight-indentation-mode)
-(add-hook 'cmake-mode-hook 'highlight-indentation-mode)
+(use-package highlight-indentation
+  :load-path "~/.emacs.d/Highlight-Indentation-for-Emacs"
+  :init (add-hook 'c-mode-hook 'highlight-indentation-mode)
+         (add-hook 'c++-mode-hook 'highlight-indentation-mode)
+         (add-hook 'python-mode-hook 'highlight-indentation-mode)
+         (add-hook 'xml-mode-hook 'highlight-indentation-mode)
+         (add-hook 'java-mode-hook 'highlight-indentation-mode)
+         (add-hook 'cmake-mode-hook 'highlight-indentation-mode)
+  :config (highlight-indentation-mode t)
+)
 
 ;; Yasnippet.
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20141223.303/")
