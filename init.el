@@ -156,8 +156,9 @@
   :bind (("C-x g" . magit-status)))
 
 ;; Jedi.
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
+(use-package jedi
+  :init (setq jedi:complete-on-dot t)
+  :config (add-hook 'python-mode-hook 'jedi:setup))
 
 ;; Graphiviz mode.
 (use-package graphviz-dot-mode
