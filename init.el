@@ -204,11 +204,14 @@
   :if window-system
   :config (global-git-gutter-mode t))
 
+;; Monokai theme.
+(use-package monokai-theme
+  :ensure t
+  :if window-system
+  :config (load-theme 'monokai t))
+
 ;; Stuff to run when a window is present.
 (when window-system 
-;; Set theme.
-(require 'monokai-theme)
-(load-theme 'monokai t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
