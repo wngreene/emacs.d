@@ -157,6 +157,7 @@
 
 ;; Jedi.
 (use-package jedi
+  :ensure t
   :init (setq jedi:complete-on-dot t)
   :config (add-hook 'python-mode-hook 'jedi:setup))
 
@@ -192,9 +193,10 @@
                  (setq projectile-indexing-method 'native)))
 
 ;; auto-complete.
-(require 'auto-complete)
-(global-auto-complete-mode 1)
-(global-set-key (kbd "<C-tab>") 'auto-complete)
+(use-package auto-complete
+  :ensure t
+  :config (global-auto-complete-mode t)
+  :bind ("<C-tab>" . auto-complete))
 
 ;; Stuff to run when a window is present.
 (when window-system 
