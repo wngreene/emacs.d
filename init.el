@@ -103,6 +103,7 @@
 
 ;; Markdown mode.
 (use-package markdown-mode
+  :ensure t
   :mode (("\\.text\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)
          ("\\.md\\'" . markdown-mode))
@@ -121,12 +122,10 @@
 )
 
 ;; Yasnippet.
-;;(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20141223.303/")
-(require 'yasnippet)
-(yas-global-mode 1)
-(setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"                 ;; personal snippets
-        ))
+(use-package yasnippet
+  :ensure t
+  :init (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  :config (yas-global-mode t))
 
 ;; Flycheck.
 (add-hook 'after-init-hook #'global-flycheck-mode)
