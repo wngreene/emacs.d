@@ -84,8 +84,9 @@
 (global-set-key (kbd "C-S-c C-S-c") 'uncomment-region)
 
 ;; Pair completion.
-(smartparens-global-mode t)
-(require 'smartparens-config)
+(use-package smartparens
+  :ensure t
+  :config (smartparens-global-mode t))
 
 ;; Rainbow delimiters.
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
