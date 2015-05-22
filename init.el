@@ -27,23 +27,12 @@
  '(inhibit-startup-screen t)
  '(use-file-dialog nil))
 
-;; Stuff to run when a window is present.
-(when window-system 
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t)
-)
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#272822" :foreground "#F8F8F2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 85 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))))
+ '(default ((t (:inherit nil :stipple nil :background nil :foreground "#F8F8F2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 85 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
 ;; Auto refresh.
 (global-auto-revert-mode t)
@@ -220,7 +209,7 @@
 ;; Monokai theme.
 (use-package monokai-theme
   :ensure t
-  :if window-system
+  ;; :if window-system
   :config (load-theme 'monokai t))
 
 ;; expand-region.
