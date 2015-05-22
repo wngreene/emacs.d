@@ -130,23 +130,16 @@
   :config (add-hook 'after-init-hook #'global-flycheck-mode))
 
 ;; Flycheck Google cpplint
-(eval-after-load 'flycheck
-  '(progn
-     (require 'flycheck-google-cpplint)))
-     ;; Add Google C++ Style checker.
-     ;; In default, syntax checked by Clang and Cppcheck.
-     ;; (flycheck-add-next-checker 'c/c++-cppcheck
-     ;;                            'c/c++-googlelint 'append)))
-(add-hook 'c-mode-hook (lambda ()
-                          (flycheck-select-checker 'c/c++-googlelint)
-                          ))
-(add-hook 'c++-mode-hook (lambda ()
-                          (flycheck-select-checker 'c/c++-googlelint)
-                          ))
-'(flycheck-googlelint-verbose "3")
-'(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
-'(flycheck-googlelint-root "project/src")
-'(flycheck-googlelint-linelength "80")
+(use-package flycheck-google-cpplint
+  :ensure t
+  :init (progn '(flycheck-googlelint-verbose "3")
+               '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
+               '(flycheck-googlelint-root "project/src")
+               '(flycheck-googlelint-linelength "80"))
+  :config (progn (add-hook 'c-mode-hook (lambda ()
+                                          (flycheck-select-checker 'c/c++-googlelint))
+                 (add-hook 'c++-mode-hook (lambda ()
+                                            (flycheck-select-checker 'c/c++-googlelint))))))
 
 ;; Magit.
 (use-package magit
