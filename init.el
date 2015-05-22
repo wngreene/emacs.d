@@ -161,9 +161,8 @@
 (setq jedi:complete-on-dot t)
 
 ;; Graphiviz mode.
-(use-package graphiviz-dot-mode
-  :ensure t
-)
+(use-package graphviz-dot-mode
+  :ensure t)
 
 ;; Whitespace butler.
 (use-package ws-butler
@@ -194,8 +193,7 @@
             (setq projectile-completion-system 'helm)
 ;;            (setq projectile-switch-project-action 'helm-projectile)
             (setq projectile-enable-caching t)
-            (setq projectile-indexing-method 'native)
-            ))
+            (setq projectile-indexing-method 'native)))
 
 ;; auto-complete.
 (require 'auto-complete)
