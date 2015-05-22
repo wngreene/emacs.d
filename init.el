@@ -25,9 +25,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
- '(minimap-always-recenter t)
- '(minimap-recenter-type (quote relative))
- '(minimap-window-location (quote right))
  '(use-file-dialog nil))
 
 ;; Auto refresh.
@@ -219,9 +216,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
- '(minimap-always-recenter t)
- '(minimap-recenter-type (quote relative))
- '(minimap-window-location (quote right))
 )
 
 (custom-set-faces
