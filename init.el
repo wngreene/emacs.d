@@ -39,25 +39,6 @@
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 
-;; Set line numbers.
-(use-package linum
-  :ensure t
-  :config (global-linum-mode t))
-
-;; Show parentheses.
-(require 'paren)
-(use-package paren
-  :ensure t
-  :config (show-paren-mode t))
-
-;; Use windmove to move cursor around split panes.
-;; shift + arrow keys
-(use-package windmove
-  :config (windmove-default-keybindings 'meta))
-
-;; CMake
-(use-package cmake-mode)
-
 ;; Column number mode.
 (column-number-mode 1)
 
@@ -80,6 +61,25 @@
 ;; Commenting.
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-S-c C-S-c") 'uncomment-region)
+
+;; Set line numbers.
+(use-package linum
+  :ensure t
+  :config (global-linum-mode t))
+
+;; Show parentheses.
+(require 'paren)
+(use-package paren
+  :ensure t
+  :config (show-paren-mode t))
+
+;; Use windmove to move cursor around split panes.
+;; shift + arrow keys
+(use-package windmove
+  :config (windmove-default-keybindings 'meta))
+
+;; CMake
+(use-package cmake-mode)
 
 ;; xml.
 (use-package xml
