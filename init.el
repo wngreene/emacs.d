@@ -151,9 +151,9 @@
 '(flycheck-googlelint-linelength "80")
 
 ;; Magit.
-(require 'magit)
-(setq magit-last-seen-setup-instructions "1.4.0")
-(global-set-key (kbd "C-x g") 'magit-status)
+(use-package magit
+  :init (setq magit-last-seen-setup-instructions "1.4.0")
+  :bind (("C-x g" . magit-status)))
 
 ;; Jedi.
 (add-hook 'python-mode-hook 'jedi:setup)
