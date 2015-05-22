@@ -15,6 +15,4 @@ emacs . &
 Requires:
 - emacs24
 - cpplint.py
-- clang
-- libclang-dev
 
