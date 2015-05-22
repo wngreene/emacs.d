@@ -222,3 +222,9 @@
   :ensure t
   :if window-system
   :config (load-theme 'monokai t))
+
+;; expand-region.
+(use-package expand-region
+  :ensure t
+  :bind (("C-=" . er/expand-region)
+         ("C--" . er/contract-region)))
