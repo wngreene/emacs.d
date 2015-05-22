@@ -40,28 +40,26 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Set line numbers.
-(require 'linum)
-(global-linum-mode)
+(use-package linum
+  :ensure t
+  :config (global-linum-mode t))
 
 ;; Show parentheses.
 (require 'paren)
-(show-paren-mode 1)
+(use-package paren
+  :ensure t
+  :config (show-paren-mode t))
 
 ;; Use windmove to move cursor around split panes.
 ;; shift + arrow keys
-(require 'windmove)
+(use-package windmove
+  :config (windmove-default-keybindings 'meta))
 
 ;; CMake
-(require 'cmake-mode) 
-
-; Fill column indicator.
-;; (require 'fill-column-indicator)
-;; (add-hook 'after-change-major-mode-hook 'fci-mode)
-;; (setq fci-rule-column 80)
+(use-package cmake-mode)
 
 ;; Column number mode.
 (column-number-mode 1)
-(windmove-default-keybindings 'meta)
 
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
@@ -83,29 +81,36 @@
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-S-c C-S-c") 'uncomment-region)
 
+;; xml.
+(use-package xml
+  :mode (("\\.launch\\'" . xml-mode)))
+
+;; latex.
+(use-package tex-mode
+  :mode (("\\.tex\\'" . latex-mode)))
+
+;; c++.
+(use-package c++-mode
+  :mode (("\\.h\\'" . c++-mode)
+         ("\\.cu\\'" . c++-mode)
+         ("\\.cl\\'" . c++-mode)))
+
 ;; Pair completion.
 (use-package smartparens
   :ensure t
   :config (smartparens-global-mode t))
 
 ;; Rainbow delimiters.
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
-;; File associations.
-;;(require 'xml)
-(add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
-(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.cl\\'" . c++-mode))
+(use-package rainbow-delimiters
+  :ensure t
+  :config (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 ;; Markdown mode.
 (use-package markdown-mode
   :ensure t
   :mode (("\\.text\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)
-         ("\\.md\\'" . markdown-mode))
-)
+         ("\\.md\\'" . markdown-mode)))
 
 ;; Indent highlighting.
 (use-package highlight-indentation
@@ -116,8 +121,7 @@
                (add-hook 'xml-mode-hook 'highlight-indentation-mode)
                (add-hook 'java-mode-hook 'highlight-indentation-mode)
                (add-hook 'cmake-mode-hook 'highlight-indentation-mode))
-  :config (highlight-indentation-mode t)
-)
+  :config (highlight-indentation-mode t))
 
 ;; Yasnippet.
 (use-package yasnippet
