@@ -2,4 +2,6 @@
 *elc
 .python-environments
 ac-comphist.dat
-elpa/archives/melpa/archive-contents
+elpa
+projectile-brookmarks.eld
+projectile.cache

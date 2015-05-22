@@ -1,21 +1,22 @@
 ;;; .emacs.s/init.el --- wng init file.
 
 ;;; Code:
+
+;; Set up use-package.
 (require 'package)
 (setq package-enable-at-startup nil)
+
+;; Add repos.
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
+
 (package-initialize)
 
-;; Add the Melpa repo.
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-;; Add the Marmalade repo.
-(add-to-list 'package-archives 
-	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
-
-;; use-package.
-(add-to-list 'load-path "~/.emacs.d/use-package/")
+;; Bootstrap use-package.
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 (require 'use-package)
 
 (custom-set-variables
@@ -24,10 +25,25 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
- '(minimap-always-recenter t)
- '(minimap-recenter-type (quote relative))
- '(minimap-window-location (quote right))
  '(use-file-dialog nil))
+
+;; Stuff to run when a window is present.
+(when window-system 
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t)
+)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "#272822" :foreground "#F8F8F2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 85 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))))
 
 ;; Auto refresh.
 (global-auto-revert-mode t)
@@ -35,35 +51,11 @@
 ;; Tab width
 (setq-default tab-width 2)
 
-;; Don't indent in namespaces.
-(c-set-offset 'innamespace 0)
-
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 
-;; Set line numbers.
-(require 'linum)
-(global-linum-mode)
-
-;; Show parentheses.
-(require 'paren)
-(show-paren-mode 1)
-
-;; Use windmove to move cursor around split panes.
-;; shift + arrow keys
-(require 'windmove)
-
-;; CMake
-(require 'cmake-mode) 
-
-; Fill column indicator.
-;; (require 'fill-column-indicator)
-;; (add-hook 'after-change-major-mode-hook 'fci-mode)
-;; (setq fci-rule-column 80)
-
 ;; Column number mode.
 (column-number-mode 1)
-(windmove-default-keybindings 'meta)
 
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
@@ -85,222 +77,147 @@
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-S-c C-S-c") 'uncomment-region)
 
-;; Pair completion.
-(electric-pair-mode 1)
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (define-key python-mode-map "\"" 'electric-pair)
-;;             (define-key python-mode-map "\'" 'electric-pair)
-;;             (define-key python-mode-map "(" 'electric-pair)
-;;             (define-key python-mode-map "[" 'electric-pair)
-;;             (define-key python-mode-map "{" 'electric-pair)))
-(add-hook 'cc-mode-hook
-          (lambda ()
-            (define-key cc-mode-map "\"" 'electric-pair)
-            (define-key cc-mode-map "\'" 'electric-pair)
-            (define-key cc-mode-map "(" 'electric-pair)
-            (define-key cc-mode-map "[" 'electric-pair)
-            (define-key cc-mode-map "{" 'electric-pair)))
-(add-hook 'latex-mode-hook
-          (lambda ()
-            (define-key latex-mode-map "\"" 'electric-pair)
-            (define-key latex-mode-map "\'" 'electric-pair)
-            (define-key latex-mode-map "(" 'electric-pair)
-            (define-key latex-mode-map "[" 'electric-pair)
-            (define-key latex-mode-map "{" 'electric-pair)))
+;; Set line numbers.
+(use-package linum
+  :ensure t
+  :config (global-linum-mode t))
 
-;; File associations.
-;;(require 'xml)
-(add-to-list 'auto-mode-alist '("\\.launch\\'" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
-(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.cl\\'" . c++-mode))
+;; Show parentheses.
+(require 'paren)
+(use-package paren
+  :ensure t
+  :config (show-paren-mode t))
+
+;; Use windmove to move cursor around split panes.
+;; shift + arrow keys
+(use-package windmove
+  :config (windmove-default-keybindings 'meta))
+
+;; CMake
+(use-package cmake-mode)
+
+;; xml.
+(use-package xml
+  :mode (("\\.launch\\'" . xml-mode)))
+
+;; latex.
+(use-package tex-mode
+  :mode (("\\.tex\\'" . latex-mode)))
+
+;; c++.
+(use-package c++-mode
+  :config (c-set-offset 'innamespace 0)
+  :mode (("\\.h\\'" . c++-mode)
+         ("\\.cu\\'" . c++-mode)
+         ("\\.cl\\'" . c++-mode)))
+
+;; Pair completion.
+(use-package smartparens
+  :ensure t
+  :config (smartparens-global-mode t))
+
+;; Rainbow delimiters.
+(use-package rainbow-delimiters
+  :ensure t
+  :config (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 ;; Markdown mode.
-(add-to-list 'load-path "~/.emacs.d/markdown-mode/")
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-;; (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+(use-package markdown-mode
+  :ensure t
+  :mode (("\\.text\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)
+         ("\\.md\\'" . markdown-mode)))
 
 ;; Indent highlighting.
-(add-to-list 'load-path "~/.emacs.d/Highlight-Indentation-for-Emacs/")
-(require 'highlight-indentation)
-(highlight-indentation-mode 1)
-(add-hook 'c-mode-hook 'highlight-indentation-mode)
-(add-hook 'c++-mode-hook 'highlight-indentation-mode)
-(add-hook 'python-mode-hook 'highlight-indentation-mode)
-(add-hook 'xml-mode-hook 'highlight-indentation-mode)
-(add-hook 'java-mode-hook 'highlight-indentation-mode)
-(add-hook 'cmake-mode-hook 'highlight-indentation-mode)
+(use-package highlight-indentation
+  :load-path "~/.emacs.d/Highlight-Indentation-for-Emacs"
+  :init (progn (add-hook 'c-mode-hook 'highlight-indentation-mode)
+               (add-hook 'c++-mode-hook 'highlight-indentation-mode)
+               (add-hook 'python-mode-hook 'highlight-indentation-mode)
+               (add-hook 'xml-mode-hook 'highlight-indentation-mode)
+               (add-hook 'java-mode-hook 'highlight-indentation-mode)
+               (add-hook 'cmake-mode-hook 'highlight-indentation-mode))
+  :config (highlight-indentation-mode t))
 
 ;; Yasnippet.
-;;(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-20141223.303/")
-(require 'yasnippet)
-(yas-global-mode 1)
-(setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"                 ;; personal snippets
-        ))
+(use-package yasnippet
+  :ensure t
+  :init (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  :config (yas-global-mode t))
 
 ;; Flycheck.
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(use-package flycheck
+  :ensure t
+  :config (add-hook 'after-init-hook #'global-flycheck-mode))
 
 ;; Flycheck Google cpplint
-(require 'flycheck)
-(eval-after-load 'flycheck
-  '(progn
-     (require 'flycheck-google-cpplint)))
-     ;; Add Google C++ Style checker.
-     ;; In default, syntax checked by Clang and Cppcheck.
-     ;; (flycheck-add-next-checker 'c/c++-cppcheck
-     ;;                            'c/c++-googlelint 'append)))
-(add-hook 'c-mode-hook (lambda ()
-                          (flycheck-select-checker 'c/c++-googlelint)
-                          ))
-(add-hook 'c++-mode-hook (lambda ()
-                          (flycheck-select-checker 'c/c++-googlelint)
-                          ))
-'(flycheck-googlelint-verbose "3")
-'(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
-'(flycheck-googlelint-root "project/src")
-'(flycheck-googlelint-linelength "80")
-
-;; GGtags.
-(require 'ggtags)
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'python-mode)
-              (ggtags-mode 1))))
-(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
-(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
-(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
-(define-key ggtags-mode-map (kbd "C-c g d") 'ggtags-find-definition)
-(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
-(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
-(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
-(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
-(setq-local imenu-create-index-function #'ggtags-build-imenu-index)
+(use-package flycheck-google-cpplint
+  :ensure t
+  :init (progn '(flycheck-googlelint-verbose "3")
+               '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
+               '(flycheck-googlelint-root "project/src")
+               '(flycheck-googlelint-linelength "80"))
+  :config (progn (add-hook 'c-mode-hook (lambda ()
+                                          (flycheck-select-checker 'c/c++-googlelint))
+                 (add-hook 'c++-mode-hook (lambda ()
+                                            (flycheck-select-checker 'c/c++-googlelint))))))
 
 ;; Magit.
-(require 'magit)
-(global-set-key (kbd "C-x g") 'magit-status)
+(use-package magit
+  :init (setq magit-last-seen-setup-instructions "1.4.0")
+  :bind (("C-x g" . magit-status)))
 
 ;; Jedi.
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
+(use-package jedi
+  :ensure t
+  :init (setq jedi:complete-on-dot t)
+  :config (add-hook 'python-mode-hook 'jedi:setup))
 
 ;; Graphiviz mode.
-(add-to-list 'load-path "~/.emacs.d/graphviz-dot-mode/")
-(require 'graphviz-dot-mode) 
+(use-package graphviz-dot-mode
+  :ensure t)
 
 ;; Whitespace butler.
-(add-to-list 'load-path "~/.emacs.d/ws-butler/")
 (use-package ws-butler
+  :ensure t
   :commands ws-butler-mode
-  :init (progn
-          (add-hook 'c-mode-common-hook 'ws-butler-mode)
-          (add-hook 'cc-mode-common-hook 'ws-butler-mode)
-          (add-hook 'c++-mode-common-hook 'ws-butler-mode)
-          (add-hook 'python-mode-hook 'ws-butler-mode)
-          (add-hook 'cython-mode-hook 'ws-butler-mode)))
+  :init (progn (add-hook 'c-mode-common-hook 'ws-butler-mode)
+               (add-hook 'cc-mode-common-hook 'ws-butler-mode)
+               (add-hook 'c++-mode-common-hook 'ws-butler-mode)
+               (add-hook 'python-mode-hook 'ws-butler-mode)
+               (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
 ;; Helm.
 (use-package helm
-  :config (progn
-          (helm-autoresize-mode 1))
+  :ensure t
+  :config (progn (helm-autoresize-mode 1))
   :bind (("M-x"     . helm-M-x)
          ("C-x C-b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)))
 
 ;; Projectile.
 (use-package projectile
-  :commands (projectile-global-mode)
-  :init (progn
-          (projectile-global-mode))
-  :config (progn
-            (setq projectile-completion-system 'helm)
-;;            (setq projectile-switch-project-action 'helm-projectile)
-            (setq projectile-enable-caching t)
-            (setq projectile-indexing-method 'native)
-            ))
-
-;; Semantic.
-(require 'semantic)
-(require 'semantic/bovine/gcc)
-(global-semanticdb-minor-mode 1)
-(global-semantic-idle-scheduler-mode 1)
-(global-semantic-idle-summary-mode 1)
-(global-semantic-idle-local-symbol-highlight-mode 1)
-
-(semantic-mode 1)
-
-;; (global-set-key (kbd "<C-tab>") 'semantic-complete-analyze-inline)
-
-;; EDE.
-(require 'ede)
-(global-ede-mode t)
-(ede-enable-generic-projects)
-
-;; Function args.
-(require 'function-args)
-(fa-config-default)
-
-;; (add-hook 'cc-mode-hook
-;;           (lambda ()
-;;             (define-key cc-mode-map (kbd "<C-tab>") 'moo-complete)
-;;             (define-key cc-mode-map (kbd "M-o" 'fa-show))))
-
-;; rosemacs.
-(add-to-list 'load-path "/opt/ros/indigo/share/emacs/site-lisp")
-;; or whatever your install space is + "/share/emacs/site-lisp"
-(require 'rosemacs-config)
+  :ensure t
+  :init (progn (projectile-global-mode))
+  :config (progn (setq projectile-completion-system 'helm)
+                 ;; (setq projectile-switch-project-action 'helm-projectile)
+                 (setq projectile-enable-caching t)
+                 (setq projectile-indexing-method 'native)))
 
 ;; auto-complete.
-(require 'auto-complete)
-(global-auto-complete-mode 1)
-(global-set-key (kbd "<C-tab>") 'auto-complete)
+(use-package auto-complete
+  :ensure t
+  :config (global-auto-complete-mode t)
+  :bind ("<C-tab>" . auto-complete))
 
-;; Stuff to run when a window is present.
-(when window-system 
-;; Set theme.
-(require 'monokai-theme)
-(load-theme 'monokai t)
+;; Git gutter fringe.
+(use-package git-gutter-fringe
+  :ensure t
+  :if window-system
+  :config (global-git-gutter-mode t))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t)
- '(minimap-always-recenter t)
- '(minimap-recenter-type (quote relative))
- '(minimap-window-location (quote right))
-)
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#272822" :foreground "#F8F8F2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 85 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
-)
-
-;; speedbar
-;; ========
-;; (when window-system
-;;   (speedbar t))
-
-;; ;; jump to speedbar frame
-;; (global-set-key (kbd "<f4>") 'speedbar-get-focus)
-
-;; sr-speedbar
-;; (add-to-list 'load-path "~/.emacs.d/sr-speedbar/")
-;; (require 'sr-speedbar)
-;; (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
-
-;; (sr-speedbar-open)
-;; (with-current-buffer sr-speedbar-buffer-name
-;;   (setq window-size-fixed 'width))
+;; Monokai theme.
+(use-package monokai-theme
+  :ensure t
+  :if window-system
+  :config (load-theme 'monokai t))
