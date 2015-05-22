@@ -164,7 +164,7 @@
 
 ;; Magit.
 (use-package magit
-  :init (setq magit-last-seen-setup-instructions "1.4.0")
+  :ensure t
   :bind (("C-x g" . magit-status)))
 
 ;; Jedi.
