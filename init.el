@@ -33,9 +33,6 @@
 ;; Tab width
 (setq-default tab-width 2)
 
-;; Don't indent in namespaces.
-(c-set-offset 'innamespace 0)
-
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 
@@ -91,6 +88,7 @@
 
 ;; c++.
 (use-package c++-mode
+  :config (c-set-offset 'innamespace 0)
   :mode (("\\.h\\'" . c++-mode)
          ("\\.cu\\'" . c++-mode)
          ("\\.cl\\'" . c++-mode)))
