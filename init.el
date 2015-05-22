@@ -161,12 +161,13 @@
 (setq jedi:complete-on-dot t)
 
 ;; Graphiviz mode.
-(add-to-list 'load-path "~/.emacs.d/graphviz-dot-mode/")
-(require 'graphviz-dot-mode) 
+(use-package graphiviz-dot-mode
+  :ensure t
+)
 
 ;; Whitespace butler.
 (use-package ws-butler
-  :load-path "~/.emacs.d/ws-butler/"
+  :ensure t
   :commands ws-butler-mode
   :init (progn
           (add-hook 'c-mode-common-hook 'ws-butler-mode)
