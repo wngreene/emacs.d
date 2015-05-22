@@ -111,12 +111,12 @@
 ;; Indent highlighting.
 (use-package highlight-indentation
   :load-path "~/.emacs.d/Highlight-Indentation-for-Emacs"
-  :init (add-hook 'c-mode-hook 'highlight-indentation-mode)
-         (add-hook 'c++-mode-hook 'highlight-indentation-mode)
-         (add-hook 'python-mode-hook 'highlight-indentation-mode)
-         (add-hook 'xml-mode-hook 'highlight-indentation-mode)
-         (add-hook 'java-mode-hook 'highlight-indentation-mode)
-         (add-hook 'cmake-mode-hook 'highlight-indentation-mode)
+  :init (progn (add-hook 'c-mode-hook 'highlight-indentation-mode)
+               (add-hook 'c++-mode-hook 'highlight-indentation-mode)
+               (add-hook 'python-mode-hook 'highlight-indentation-mode)
+               (add-hook 'xml-mode-hook 'highlight-indentation-mode)
+               (add-hook 'java-mode-hook 'highlight-indentation-mode)
+               (add-hook 'cmake-mode-hook 'highlight-indentation-mode))
   :config (highlight-indentation-mode t)
 )
 
@@ -168,18 +168,16 @@
 (use-package ws-butler
   :ensure t
   :commands ws-butler-mode
-  :init (progn
-          (add-hook 'c-mode-common-hook 'ws-butler-mode)
-          (add-hook 'cc-mode-common-hook 'ws-butler-mode)
-          (add-hook 'c++-mode-common-hook 'ws-butler-mode)
-          (add-hook 'python-mode-hook 'ws-butler-mode)
-          (add-hook 'cython-mode-hook 'ws-butler-mode)))
+  :init (progn (add-hook 'c-mode-common-hook 'ws-butler-mode)
+               (add-hook 'cc-mode-common-hook 'ws-butler-mode)
+               (add-hook 'c++-mode-common-hook 'ws-butler-mode)
+               (add-hook 'python-mode-hook 'ws-butler-mode)
+               (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
 ;; Helm.
 (use-package helm
   :ensure t
-  :config (progn
-          (helm-autoresize-mode 1))
+  :config (progn (helm-autoresize-mode 1))
   :bind (("M-x"     . helm-M-x)
          ("C-x C-b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)))
@@ -187,13 +185,11 @@
 ;; Projectile.
 (use-package projectile
   :ensure t
-  :init (progn
-          (projectile-global-mode))
-  :config (progn
-            (setq projectile-completion-system 'helm)
-;;            (setq projectile-switch-project-action 'helm-projectile)
-            (setq projectile-enable-caching t)
-            (setq projectile-indexing-method 'native)))
+  :init (progn (projectile-global-mode))
+  :config (progn (setq projectile-completion-system 'helm)
+                 ;; (setq projectile-switch-project-action 'helm-projectile)
+                 (setq projectile-enable-caching t)
+                 (setq projectile-indexing-method 'native)))
 
 ;; auto-complete.
 (require 'auto-complete)
