@@ -125,10 +125,11 @@
   :config (yas-global-mode t))
 
 ;; Flycheck.
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(use-package flycheck
+  :ensure t
+  :config (add-hook 'after-init-hook #'global-flycheck-mode))
 
 ;; Flycheck Google cpplint
-(require 'flycheck)
 (eval-after-load 'flycheck
   '(progn
      (require 'flycheck-google-cpplint)))
