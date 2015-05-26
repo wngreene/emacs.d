@@ -217,3 +217,7 @@
   :ensure t
   :bind (("C-=" . er/expand-region)
          ("C--" . er/contract-region)))
+
+;; matlab-mode.
+(use-package matlab-mode
+  :ensure t)
