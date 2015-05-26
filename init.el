@@ -220,4 +220,8 @@
 
 ;; matlab-mode.
 (use-package matlab-mode
-  :ensure t)
+  :ensure t
+  :init (progn (setq matlab-show-mlint-warnings t)
+               (setq matlab-functions-have-end t)
+               (setq matlab-highlight-block-match-flag t)
+               (setq mlint-programs '("mlint" "/usr/local/MATLAB/R2014b/bin/glnxa64/mlint"))))
