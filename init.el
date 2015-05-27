@@ -64,7 +64,7 @@
 
 ;; Commenting.
 (global-set-key (kbd "C-c C-c") 'comment-region)
-(global-set-key (kbd "C-S-c C-S-c") 'uncomment-region)
+(global-set-key (kbd "C-c C-v") 'uncomment-region)
 
 ;; Set line numbers.
 (use-package linum
