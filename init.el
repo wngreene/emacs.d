@@ -217,3 +217,9 @@
   :ensure t
   :bind (("C-=" . er/expand-region)
          ("C--" . er/contract-region)))
+
+;; dired-details.
+(use-package dired-details
+  :ensure t
+  :init (setq dired-details-hidden-string "")
+  :bind (("C-c C-s" . dired-details-toggle)))
