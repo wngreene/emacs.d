@@ -97,7 +97,11 @@
 ;; Use windmove to move cursor around split panes.
 ;; shift + arrow keys
 (use-package windmove
-  :config (windmove-default-keybindings 'meta))
+  :config (windmove-default-keybindings 'meta)
+  :bind(("M-s-i" . windmove-up)
+        ("M-s-k" . windmove-down)
+        ("M-s-j" . windmove-left)
+        ("M-s-l" . windmove-right))) 
 
 ;; CMake
 (use-package cmake-mode)
