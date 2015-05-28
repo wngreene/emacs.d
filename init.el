@@ -47,7 +47,9 @@
 (column-number-mode 1)
 
 ;; Remove tool bar.
-(tool-bar-mode nil)
+(if window-system
+  (tool-bar-mode -1)
+)
 
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
