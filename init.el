@@ -58,10 +58,11 @@
 (use-package gud
   :ensure t
   :bind (([f5] . gud-cont)
+         ([f6] . gud-finish)
          ([f7] . gud-tbreak)
          ([f9] . gud-break)
          ([f10] . gud-next)
-         ([f11] . gud-finish)))
+         ([f11] . gud-step)))
 
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
