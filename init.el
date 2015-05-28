@@ -56,6 +56,20 @@
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
+;; Navigation ijkl.
+(global-set-key (kbd "s-i") "\C-u1\M-v")
+(global-set-key (kbd "s-k") "\C-u1\C-v")
+
+(global-set-key (kbd "M-i") 'previous-line)
+(global-set-key (kbd "M-k") 'next-line)
+(global-set-key (kbd "M-j") 'left-char)
+(global-set-key (kbd "M-l") 'right-char)
+
+(global-set-key (kbd "M-I") 'backward-paragraph)
+(global-set-key (kbd "M-K") 'forward-paragraph)
+(global-set-key (kbd "M-J") 'left-word)
+(global-set-key (kbd "M-L") 'right-word)
+
 ;; Window resizing.
 (global-set-key (kbd "C-s-b") 'shrink-window-horizontally)
 (global-set-key (kbd "C-s-f") 'enlarge-window-horizontally)
