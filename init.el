@@ -46,6 +46,9 @@
 ;; Column number mode.
 (column-number-mode 1)
 
+;; Remove tool bar.
+(tool-bar-mode nil)
+
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
 (global-set-key (kbd "<s-down>") "\C-u1\C-v")
