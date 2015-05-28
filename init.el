@@ -51,6 +51,9 @@
   (tool-bar-mode -1)
 )
 
+;; gdb.
+(setq gdb-many-windows t)
+
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
 (global-set-key (kbd "<s-down>") "\C-u1\C-v")
