@@ -47,15 +47,14 @@
 (column-number-mode 1)
 
 ;; Navigation.
-(global-set-key (kbd "M-i") 'previous-line)
-(global-set-key (kbd "M-k") 'next-line)
-(global-set-key (kbd "M-j") 'left-char)
-(global-set-key (kbd "M-l") 'right-char)
+(global-set-key (kbd "<s-up>") "\C-u1\M-v")
+(global-set-key (kbd "<s-down>") "\C-u1\C-v")
 
-(global-set-key (kbd "M-I") 'backward-paragraph)
-(global-set-key (kbd "M-K") 'forward-paragraph)
-(global-set-key (kbd "M-L") 'right-word)
-(global-set-key (kbd "M-J") 'left-word)
+(global-set-key (kbd "M-s-p") "\C-u1\M-v")
+(global-set-key (kbd "M-s-n") "\C-u1\C-v")
+
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 
 (global-set-key (kbd "M-{") "\C-u1\M-v")
 (global-set-key (kbd "M-}") "\C-u1\C-v")
