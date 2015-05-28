@@ -53,11 +53,11 @@
 (global-set-key (kbd "M-s-p") "\C-u1\M-v")
 (global-set-key (kbd "M-s-n") "\C-u1\C-v")
 
-(global-set-key (kbd "M-p") 'backward-paragraph)
-(global-set-key (kbd "M-n") 'forward-paragraph)
-
 (global-set-key (kbd "M-j") "\C-u1\M-v")
 (global-set-key (kbd "M-k") "\C-u1\C-v")
+
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 
 ;; Window resizing.
 (global-set-key (kbd "C-s-b") 'shrink-window-horizontally)
@@ -218,8 +218,8 @@
 ;; expand-region.
 (use-package expand-region
   :ensure t
-  :bind (("M-=" . er/expand-region)
-         ("M--" . er/contract-region)))
+  :bind (("C-=" . er/expand-region)
+         ("C--" . er/contract-region)))
 
 ;; dired-details.
 (use-package dired-details
