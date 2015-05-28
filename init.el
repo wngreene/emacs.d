@@ -237,3 +237,10 @@
   :ensure t
   :init (setq dired-details-hidden-string "")
   :bind (("C-c C-s" . dired-details-toggle)))
+
+;; ggtags.
+(use-package ggtags
+  :ensure t
+  :init (progn (add-hook 'c-mode-common-hook 'ggtags-mode)
+               (add-hook 'cc-mode-common-hook 'ggtags-mode)
+               (add-hook 'java-mode-hook 'ggtags-mode)))
