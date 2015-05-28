@@ -54,6 +54,15 @@
 ;; gdb.
 (setq gdb-many-windows t)
 
+;; gud.
+(use-package gud
+  :ensure t
+  :bind (([f5] . gud-cont)
+         ([f7] . gud-tbreak)
+         ([f9] . gud-break)
+         ([f10] . gud-next)
+         ([f11] . gud-finish)))
+
 ;; Navigation.
 (global-set-key (kbd "<s-up>") "\C-u1\M-v")
 (global-set-key (kbd "<s-down>") "\C-u1\C-v")
