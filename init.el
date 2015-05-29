@@ -226,9 +226,24 @@
   :ensure t
   :init (progn (projectile-global-mode))
   :config (progn (setq projectile-completion-system 'helm)
-                 ;; (setq projectile-switch-project-action 'helm-projectile)
+                 (setq projectile-switch-project-action 'helm-projectile)
                  (setq projectile-enable-caching t)
                  (setq projectile-indexing-method 'native)))
+
+;; helm-projectile.
+(use-package helm-projectile
+  :ensure t
+  :config (helm-projectile-on))
+
+;; ;; perspective.
+;; (use-package perspective
+;;   :ensure t
+;;   :config (persp-mode))
+
+;; ;; persp-projectile.
+;; (use-package persp-projectile
+;;   :ensure t
+;;   :bind (("C-x x j" . projectile-persp-switch-project)))
 
 ;; auto-complete.
 (use-package auto-complete
