@@ -225,7 +225,11 @@
 (use-package projectile
   :ensure t
   :init (progn (projectile-global-mode))
-  :config (progn (setq projectile-find-dir-includes-top-level t)
+  :config (progn (add-to-list 'projectile-globally-ignored-directories ".git") 
+                 (add-to-list 'projectile-globally-ignored-files "GPATH")                  
+                 (add-to-list 'projectile-globally-ignored-files "GTAGS")                  
+                 (add-to-list 'projectile-globally-ignored-files "GRTAGS")                  
+                 (setq projectile-find-dir-includes-top-level t)
                  (setq projectile-completion-system 'helm)
                  (setq projectile-switch-project-action 'helm-projectile)
                  (setq projectile-enable-caching t)
