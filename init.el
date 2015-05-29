@@ -225,10 +225,11 @@
 (use-package projectile
   :ensure t
   :init (progn (projectile-global-mode))
-  :config (progn (setq projectile-completion-system 'helm)
+  :config (progn (setq projectile-find-dir-includes-top-level t)
+                 (setq projectile-completion-system 'helm)
                  (setq projectile-switch-project-action 'helm-projectile)
                  (setq projectile-enable-caching t)
-                 (setq projectile-indexing-method 'native)))
+                 (setq projectile-indexing-method 'alien)))
 
 ;; helm-projectile.
 (use-package helm-projectile
