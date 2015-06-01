@@ -219,7 +219,9 @@
   :config (progn (helm-autoresize-mode 1))
   :bind (("M-x"     . helm-M-x)
          ("C-x C-b" . helm-buffers-list)
-         ("C-x C-f" . helm-find-files)))
+         ("C-x C-f" . helm-find-files)
+         ("C-c h i" . helm-semantic-or-imenu)
+         ("C-c h o" . helm-occur)))
 
 ;; Projectile.
 (use-package projectile
