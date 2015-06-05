@@ -193,6 +193,10 @@
   :init (setq magit-last-seen-setup-instructions "1.4.0")
   :bind (("C-x g" . magit-status)))
 
+;; magit-gh-pulls.
+(use-package magit-gh-pulls
+  :init (progn (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)))
+
 ;; Jedi.
 (use-package jedi
   :ensure t
