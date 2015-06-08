@@ -288,3 +288,13 @@
   :init (progn (add-hook 'c-mode-common-hook 'ggtags-mode)
                (add-hook 'cc-mode-common-hook 'ggtags-mode)
                (add-hook 'java-mode-hook 'ggtags-mode)))
+
+;; ansi-color.
+;; https://emacs.stackexchange.com/questions/8135/why-does-compilation-buffer-show-control-characters
+(use-package ansi-color
+  :ensure t
+  :config (progn 
+            (defun my/ansi-colorize-buffer ()
+              (let ((buffer-read-only nil))
+                (ansi-color-apply-on-region (point-min) (point-max))))
+            (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)))
