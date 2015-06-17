@@ -122,7 +122,8 @@
         ("M-s-l" . windmove-right))) 
 
 ;; CMake
-(use-package cmake-mode)
+(use-package cmake-mode
+  :ensure t)
 
 ;; xml.
 (use-package xml
