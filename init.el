@@ -46,6 +46,9 @@
 ;; Column number mode.
 (column-number-mode 1)
 
+;; Move to trash instead of deleting.
+(setq delete-by-moving-to-trash t)
+
 ;; Remove tool bar.
 (if window-system
   (tool-bar-mode -1)
