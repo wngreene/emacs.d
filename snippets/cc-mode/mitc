@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: mitc
+# key: mitc
+# --
+/* Copyright ${1:Project} Massachusetts Institute of Technology */
