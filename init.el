@@ -54,6 +54,10 @@
   (tool-bar-mode -1)
 )
 
+;; Use the ipython interpreter.
+(when (executable-find "ipython")
+  (setq python-shell-interpreter "ipython"))
+  
 ;; gdb.
 (setq gdb-many-windows t)
 
