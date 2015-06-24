@@ -177,7 +177,9 @@
 ;; Flycheck.
 (use-package flycheck
   :ensure t
-  :config (add-hook 'after-init-hook #'global-flycheck-mode))
+  :config (progn (add-hook 'after-init-hook #'global-flycheck-mode)
+                 (add-hook 'python-mode-hook (lambda ()
+                                               (flycheck-select-checker 'python-pylint)))))
 
 ;; Flycheck Google cpplint
 (use-package flycheck-google-cpplint
