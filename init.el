@@ -49,6 +49,9 @@
 ;; Move to trash instead of deleting.
 (setq delete-by-moving-to-trash t)
 
+;; Allow for recursive trashing.
+(setq dired-recursive-deletes "always")
+
 ;; Remove tool bar.
 (if window-system
   (tool-bar-mode -1)
