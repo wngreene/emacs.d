@@ -191,12 +191,11 @@
 ;; Flycheck Google cpplint
 (use-package flycheck-google-cpplint
   :ensure t
-  :init (progn '(flycheck-googlelint-verbose "3")
-               '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
-               '(flycheck-googlelint-root "project/src")
-               '(flycheck-googlelint-linelength "80"))
-  :config (progn (add-hook 'c-mode-hook (lambda ()
-                                          (flycheck-select-checker 'c/c++-googlelint))
+  :config (progn (setq flycheck-googlelint-verbose "3")
+                 (setq flycheck-googlelint-root "src")
+                 (setq flycheck-googlelint-linelength "80")
+                 (add-hook 'c-mode-hook (lambda ()
+                                          (flycheck-select-ichecker 'c/c++-googlelint))
                  (add-hook 'c++-mode-hook (lambda ()
                                             (flycheck-select-checker 'c/c++-googlelint))))))
 
