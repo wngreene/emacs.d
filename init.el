@@ -192,7 +192,7 @@
 (use-package flycheck-google-cpplint
   :ensure t
   :config (progn (setq flycheck-googlelint-verbose "3")
-                 (setq flycheck-googlelint-root "src")
+                 ;; (setq flycheck-googlelint-root "src")
                  (setq flycheck-googlelint-linelength "80")
                  (add-hook 'c-mode-hook (lambda ()
                                           (flycheck-select-ichecker 'c/c++-googlelint))
