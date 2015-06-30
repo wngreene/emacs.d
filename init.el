@@ -254,15 +254,15 @@
   :ensure t
   :config (helm-projectile-on))
 
-;; ;; perspective.
-;; (use-package perspective
-;;   :ensure t
-;;   :config (persp-mode))
+;; perspective.
+(use-package perspective
+  :ensure t
+  :config (persp-mode))
 
-;; ;; persp-projectile.
-;; (use-package persp-projectile
-;;   :ensure t
-;;   :bind (("C-x x j" . projectile-persp-switch-project)))
+;; persp-projectile.
+(use-package persp-projectile
+  :ensure t
+  :bind (("s-s" . projectile-persp-switch-project)))
 
 ;; auto-complete.
 (use-package auto-complete
