@@ -264,6 +264,13 @@
   :ensure t
   :bind (("s-s" . projectile-persp-switch-project)))
 
+;; semantic.
+(use-package semantic
+  :ensure t
+  :config (progn (global-semanticdb-minor-mode 1)
+                 (global-semantic-idle-scheduler-mode 1)
+                 (semantic-mode 1)))
+
 ;; auto-complete.
 (use-package auto-complete
   :ensure t
