@@ -52,6 +52,9 @@
 ;; Allow for recursive trashing.
 (setq dired-recursive-deletes "always")
 
+;; Updates dired buffers. automatically.
+(setq dired-auto-revert-buffer t)
+
 ;; Remove tool bar.
 (if window-system
   (tool-bar-mode -1)
