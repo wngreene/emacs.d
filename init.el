@@ -135,6 +135,10 @@
 (use-package cmake-mode
   :ensure t)
 
+;; yaml-mode.
+(use-package yaml-mode
+  :ensure t)
+
 ;; xml.
 (use-package xml
   :mode (("\\.launch\\'" . xml-mode)))
