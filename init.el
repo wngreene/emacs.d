@@ -50,7 +50,7 @@
 (setq delete-by-moving-to-trash t)
 
 ;; Allow for recursive trashing.
-(setq dired-recursive-deletes "always")
+(setq dired-recursive-deletes 'always)
 
 ;; Updates dired buffers. automatically.
 (setq dired-auto-revert-buffer t)
