@@ -49,6 +49,9 @@
 ;; Move to trash instead of deleting.
 (setq delete-by-moving-to-trash t)
 
+;; Set dired switches.
+(setq dired-listing-switches "-alh")
+
 ;; Allow for recursive trashing.
 (setq dired-recursive-deletes 'always)
 
