@@ -149,6 +149,8 @@
 ;; latex.
 (use-package tex-mode
   :mode (("\\.tex\\'" . latex-mode)))
+(use-package tex-site
+  :ensure auctex)
 
 ;; c++.
 (use-package c++-mode
