@@ -147,10 +147,10 @@
   :mode (("\\.launch\\'" . xml-mode)))
 
 ;; latex.
-(use-package tex-mode
-  :mode (("\\.tex\\'" . latex-mode)))
 (use-package tex-site
-  :ensure auctex)
+  :ensure auctex
+  :mode (("\\.tex\\'" . LaTeX-mode))
+  :config (add-hook 'LaTeX-mode-hook 'turn-on-reftex))
 
 ;; c++.
 (use-package c++-mode
