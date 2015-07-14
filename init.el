@@ -152,6 +152,9 @@
   :mode (("\\.tex\\'" . LaTeX-mode))
   :config (add-hook 'LaTeX-mode-hook 'turn-on-reftex))
 
+;; doc-view-mode.
+(setq doc-view-resolution 300)
+
 ;; c++.
 (use-package c++-mode
   :config (c-set-offset 'innamespace 0)
@@ -162,7 +165,8 @@
 ;; Pair completion.
 (use-package smartparens
   :ensure t
-  :config (smartparens-global-mode t))
+  :config (progn (smartparens-global-mode t)
+                 (sp-local-pair `LaTeX-mode "$" "$")))
 
 ;; Rainbow delimiters.
 (use-package rainbow-delimiters
