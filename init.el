@@ -58,8 +58,9 @@
 ;; Updates dired buffers. automatically.
 (setq dired-auto-revert-buffer t)
 
-;; Set fill column.
+;; Set fill column and auto fill.
 (setq-default fill-column 80)
+(setq-default auto-fill-function 'do-auto-fill)
 
 ;; Remove tool bar.
 (if window-system
