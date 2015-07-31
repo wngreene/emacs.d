@@ -245,6 +245,9 @@
                (add-hook 'python-mode-hook 'ws-butler-mode)
                (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
+;; Needed for helm-projectile-grep.
+(use-package grep)
+
 ;; Helm.
 (use-package helm
   :ensure t
