@@ -60,7 +60,7 @@
 
 ;; Set fill column and auto fill.
 (setq-default fill-column 80)
-(setq-default auto-fill-function 'do-auto-fill)
+;; (setq-default auto-fill-function 'do-auto-fill)
 
 ;; Remove tool bar.
 (if window-system
