@@ -62,6 +62,10 @@
 (setq-default fill-column 80)
 ;; (setq-default auto-fill-function 'do-auto-fill)
 
+;; Set some options for compilation mode.
+(setq compilation-scroll-output t)
+(setq first-error t)
+
 ;; Remove tool bar.
 (if window-system
   (tool-bar-mode -1)
