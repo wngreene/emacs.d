@@ -63,8 +63,7 @@
 ;; (setq-default auto-fill-function 'do-auto-fill)
 
 ;; Set some options for compilation mode.
-(setq compilation-scroll-output t)
-(setq first-error t)
+(setq compilation-scroll-output 'first-error)
 
 ;; Remove tool bar.
 (if window-system
