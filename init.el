@@ -249,6 +249,9 @@
                (add-hook 'python-mode-hook 'ws-butler-mode)
                (add-hook 'cython-mode-hook 'ws-butler-mode)))
 
+;; Needed for helm-projectile-grep.
+(use-package grep)
+
 ;; Helm.
 (use-package helm
   :ensure t
@@ -341,3 +344,20 @@
               (let ((buffer-read-only nil))
                 (ansi-color-apply-on-region (point-min) (point-max))))
             (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)))
+
+;; gnus.
+(use-package gnus
+  :ensure t
+  :init (progn (setq user-mail-address "wnickgreene@gmail.com")
+               (setq user-full-name "W. Nicholas Greene")
+               (setq gnus-select-method
+                     '(nnimap "gmail"
+                              (nnimap-address "imap.gmail.com")
+                              (nnimap-server-port "imaps")
+                              (nnimap-stream ssl)))
+
+               (setq smtpmail-smtp-service 587
+                     gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\(\\|$\\)\\|^[\"]\"[#'()]")
+               (setq send-mail-function	'smtpmail-send-it
+                     message-send-mail-function	'smtpmail-send-it
+                     smtpmail-smtp-server "smtp.gmail.com")))
