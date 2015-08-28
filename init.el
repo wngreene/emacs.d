@@ -157,7 +157,10 @@
 (use-package tex-site
   :ensure auctex
   :mode (("\\.tex\\'" . LaTeX-mode))
-  :config (add-hook 'LaTeX-mode-hook 'turn-on-reftex))
+  :config (progn (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+                 (setq TeX-auto-save t)
+                 (setq TeX-parse-self t)                   
+                 (setq-default TeX-master nil)))
 
 ;; doc-view-mode.
 (setq doc-view-resolution 300)
