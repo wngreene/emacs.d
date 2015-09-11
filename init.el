@@ -366,12 +366,12 @@
   :init (setq dired-details-hidden-string "")
   :bind (("C-c C-s" . dired-details-toggle)))
 
-;; ggtags.
-(use-package ggtags
-  :ensure t
-  :init (progn (add-hook 'c-mode-common-hook 'ggtags-mode)
-               (add-hook 'cc-mode-common-hook 'ggtags-mode)
-               (add-hook 'java-mode-hook 'ggtags-mode)))
+;; ;; ggtags.
+;; (use-package ggtags
+;;   :ensure t
+;;   :init (progn (add-hook 'c-mode-common-hook 'ggtags-mode)
+;;                (add-hook 'cc-mode-common-hook 'ggtags-mode)
+;;                (add-hook 'java-mode-hook 'ggtags-mode)))
 
 ;; ansi-color.
 ;; https://emacs.stackexchange.com/questions/8135/why-does-compilation-buffer-show-control-characters
@@ -383,19 +383,19 @@
                 (ansi-color-apply-on-region (point-min) (point-max))))
             (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)))
 
-;; gnus.
-(use-package gnus
-  :ensure t
-  :init (progn (setq user-mail-address "wnickgreene@gmail.com")
-               (setq user-full-name "W. Nicholas Greene")
-               (setq gnus-select-method
-                     '(nnimap "gmail"
-                              (nnimap-address "imap.gmail.com")
-                              (nnimap-server-port "imaps")
-                              (nnimap-stream ssl)))
+;; ;; gnus.
+;; (use-package gnus
+;;   :ensure t
+;;   :init (progn (setq user-mail-address "wnickgreene@gmail.com")
+;;                (setq user-full-name "W. Nicholas Greene")
+;;                (setq gnus-select-method
+;;                      '(nnimap "gmail"
+;;                               (nnimap-address "imap.gmail.com")
+;;                               (nnimap-server-port "imaps")
+;;                               (nnimap-stream ssl)))
 
-               (setq smtpmail-smtp-service 587
-                     gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\(\\|$\\)\\|^[\"]\"[#'()]")
-               (setq send-mail-function	'smtpmail-send-it
-                     message-send-mail-function	'smtpmail-send-it
-                     smtpmail-smtp-server "smtp.gmail.com")))
+;;                (setq smtpmail-smtp-service 587
+;;                      gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\(\\|$\\)\\|^[\"]\"[#'()]")
+;;                (setq send-mail-function	'smtpmail-send-it
+;;                      message-send-mail-function	'smtpmail-send-it
+;;                      smtpmail-smtp-server "smtp.gmail.com")))
