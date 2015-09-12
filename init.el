@@ -338,7 +338,7 @@
         company-show-numbers            t
         company-tooltip-limit           20
         company-dabbrev-downcase        nil
-        company-backends                '((company-irony company-gtags))
+        company-backends                '((company-irony))
         )
   :bind ("C-;" . company-complete-common))
 
