@@ -308,6 +308,13 @@
 ;;   :bind ("<C-tab>" . auto-complete))
 
 ;; irony-mode.
+;; NOTE: You must run irony-install-server once after installation.
+;; NOTE: You must provide a compilation database so that irony can find all
+;; your includes. With a CMake project, call cmake with
+;; -DCMAKE_EXPORT_COMPILE_COMMANDS=ON which will generate a compile_commands.json
+;; file in your build directory. Then, go to your project and call:
+;; irony-cdb-json-add-compile-commands-path RET <path to source> RET <path to build/compile_commands.json>
+;; and you're set!
 (use-package irony
   :ensure t
   :defer t
@@ -325,6 +332,24 @@
       'irony-completion-at-point-async))
   (add-hook 'irony-mode-hook 'my-irony-mode-hook)
   (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options))
+
+;; Function to check that the correct irony database is found.
+(defun check-compile-options ()
+  (interactive)
+  (irony-cdb-json--ensure-project-alist-loaded)
+  (irony--aif (irony-cdb-json--locate-db)
+      (progn
+        (message "I: found compilation database: %s" it)
+        (let ((db (irony-cdb-json--load-db it)))
+          (irony--aif (irony-cdb-json--exact-flags db)
+              (progn
+                (message "I: found exact match: %s" it)
+                it)
+            (let ((dir-cdb (irony-cdb-json--compute-directory-cdb db)))
+              (irony--aif (irony-cdb-json--guess-flags dir-cdb)
+                  (message "I: found by guessing: %s" it)
+                (message "E: guessing failed"))))))
+    (message "E: failed to locate compilation database")))
 
 ;; company-mode.
 (use-package company
