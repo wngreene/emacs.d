@@ -191,6 +191,11 @@
          ("\\.markdown\\'" . markdown-mode)
          ("\\.md\\'" . markdown-mode)))
 
+;; pandoc-mode
+(use-package pandoc-mode
+  :ensure t
+  :config (add-hook 'markdown-mode-hook 'pandoc-mode))
+
 ;; Indent highlighting.
 (use-package highlight-indentation
   :load-path "~/.emacs.d/Highlight-Indentation-for-Emacs"
