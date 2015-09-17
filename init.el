@@ -166,6 +166,11 @@
 ;; doc-view-mode.
 (setq doc-view-resolution 300)
 
+;; pdf-tools.
+(use-package pdf-tools
+  :ensure t
+  :config (pdf-tools-install))
+
 ;; c++.
 (use-package c++-mode
   :config (c-set-offset 'innamespace 0)
