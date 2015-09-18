@@ -36,6 +36,7 @@
 
 ;; Auto refresh.
 (global-auto-revert-mode t)
+(setq auto-revert-interval 0.5)
 
 ;; Tab width
 (setq-default tab-width 2)
