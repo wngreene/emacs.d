@@ -66,6 +66,10 @@
 ;; Set some options for compilation mode.
 (setq compilation-scroll-output 'first-error)
 
+;; org source code highlighting.
+(setq org-src-fontify-natively t)
+(setq org-highlight-latex-and-related '(latex script entities))
+
 ;; Remove tool bar.
 (if window-system
   (tool-bar-mode -1)
