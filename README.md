@@ -6,7 +6,7 @@ the required packages from the package manager:
 
 ```
 cd
-git clone git@github.mit.edu:/USERNAME/emacs.d.git .emacs.d
+git clone git@github.com:wngreene/emacs.d.git .emacs.d
 cd .emacs.d
 git submodule update --init Highlight-Indentation-for-Emacs
 emacs . &
