@@ -40,6 +40,7 @@
 
 ;; Tab width
 (setq-default tab-width 2)
+(setq-default sh-indentation 2)
 
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
