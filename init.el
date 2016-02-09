@@ -300,6 +300,10 @@
   :ensure t
   :config (helm-projectile-on))
 
+;; helm-ag
+(use-package helm-ag
+  :ensure t)
+
 ;; ;; perspective.
 ;; (use-package perspective
 ;;   :ensure t
