@@ -40,6 +40,7 @@
 
 ;; Tab width
 (setq-default tab-width 2)
+(setq-default sh-indentation 2)
 
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
@@ -235,6 +236,7 @@
 (use-package flycheck-google-cpplint
   :ensure t
   :config (progn (setq flycheck-googlelint-verbose "3")
+                 (setq flycheck-c/c++-googlelint-executable "cpplint")
                  ;; (setq flycheck-googlelint-root "src")
                  (setq flycheck-googlelint-linelength "80")
                  (add-hook 'c-mode-hook (lambda ()
@@ -299,6 +301,10 @@
 (use-package helm-projectile
   :ensure t
   :config (helm-projectile-on))
+
+;; helm-ag
+(use-package helm-ag
+  :ensure t)
 
 ;; ;; perspective.
 ;; (use-package perspective
