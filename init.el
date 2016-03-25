@@ -95,18 +95,12 @@
          ([f11] . gud-step)))
 
 ;; Navigation.
-(global-set-key (kbd "<s-up>") "\C-u1\M-v")
-(global-set-key (kbd "<s-down>") "\C-u1\C-v")
-
 (global-set-key (kbd "M-s-p") "\C-u1\M-v")
 (global-set-key (kbd "M-s-n") "\C-u1\C-v")
 
-(global-set-key (kbd "M-p") 'backward-paragraph)
-(global-set-key (kbd "M-n") 'forward-paragraph)
-
 ;; Navigation ijkl.
-(global-set-key (kbd "s-i") "\C-u1\M-v")
-(global-set-key (kbd "s-k") "\C-u1\C-v")
+(global-set-key (kbd "M-p") "\C-u1\M-v")
+(global-set-key (kbd "M-n") "\C-u1\C-v")
 
 (global-set-key (kbd "M-i") 'previous-line)
 (global-set-key (kbd "M-k") 'next-line)
