@@ -98,10 +98,10 @@
 (global-set-key (kbd "M-s-p") "\C-u1\M-v")
 (global-set-key (kbd "M-s-n") "\C-u1\C-v")
 
-;; Navigation ijkl.
 (global-set-key (kbd "M-p") "\C-u1\M-v")
 (global-set-key (kbd "M-n") "\C-u1\C-v")
 
+;; Navigation ijkl.
 (global-set-key (kbd "M-i") 'previous-line)
 (global-set-key (kbd "M-k") 'next-line)
 (global-set-key (kbd "M-j") 'left-char)
@@ -133,10 +133,10 @@
 ;; shift + arrow keys
 (use-package windmove
   :config (windmove-default-keybindings 'meta)
-  :bind(("C-M-i" . windmove-up)
-        ("C-M-k" . windmove-down)
-        ("C-M-j" . windmove-left)
-        ("C-M-l" . windmove-right))) 
+  :bind (("C-M-i" . windmove-up)
+         ("C-M-k" . windmove-down)
+         ("C-M-j" . windmove-left)
+         ("C-M-l" . windmove-right))) 
 
 ;; CMake
 (use-package cmake-mode
@@ -386,7 +386,7 @@
         company-dabbrev-downcase        nil
         company-backends                '((company-irony))
         )
-  :bind ("C-;" . company-complete-common))
+  :bind ("M-'" . company-complete-common))
 
 ;; Git gutter fringe.
 (use-package git-gutter-fringe
