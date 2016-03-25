@@ -221,7 +221,12 @@
 
 (use-package highlight-indent-guides
   :ensure t
-  :config (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+  :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+
+;; Fill column indicator.
+(use-package fill-column-indicator
+  :ensure t
+  :init (add-hook `prog-mode-hook 'fci-mode))
 
 ;; Yasnippet.
 (use-package yasnippet
