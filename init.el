@@ -124,10 +124,6 @@
 (global-set-key (kbd "C-s-p") 'shrink-window)
 (global-set-key (kbd "C-s-n") 'enlarge-window)
 
-;; Commenting.
-(global-set-key (kbd "C-c C-c") 'comment-region)
-(global-set-key (kbd "C-S-c C-S-c") 'uncomment-region)
-
 ;; Set line numbers.
 (use-package linum
   :ensure t
