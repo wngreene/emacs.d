@@ -208,15 +208,19 @@
   :config (add-hook 'markdown-mode-hook 'pandoc-mode))
 
 ;; Indent highlighting.
-(use-package highlight-indentation
-  :load-path "~/.emacs.d/Highlight-Indentation-for-Emacs"
-  :init (progn (add-hook 'c-mode-hook 'highlight-indentation-mode)
-               (add-hook 'c++-mode-hook 'highlight-indentation-mode)
-               (add-hook 'python-mode-hook 'highlight-indentation-mode)
-               (add-hook 'xml-mode-hook 'highlight-indentation-mode)
-               (add-hook 'java-mode-hook 'highlight-indentation-mode)
-               (add-hook 'cmake-mode-hook 'highlight-indentation-mode))
-  :config (highlight-indentation-mode t))
+;; (use-package highlight-indentation
+;;   :load-path "~/.emacs.d/Highlight-Indentation-for-Emacs"
+;;   :init (progn (add-hook 'c-mode-hook 'highlight-indentation-mode)
+;;                (add-hook 'c++-mode-hook 'highlight-indentation-mode)
+;;                (add-hook 'python-mode-hook 'highlight-indentation-mode)
+;;                (add-hook 'xml-mode-hook 'highlight-indentation-mode)
+;;                (add-hook 'java-mode-hook 'highlight-indentation-mode)
+;;                (add-hook 'cmake-mode-hook 'highlight-indentation-mode))
+;;   :config (highlight-indentation-mode t))
+
+(use-package highlight-indent-guides
+  :ensure t
+  :config (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
 
 ;; Yasnippet.
 (use-package yasnippet
