@@ -68,6 +68,7 @@
 (setq compilation-scroll-output 'first-error)
 
 ;; org source code highlighting.
+(require 'org)
 (setq org-src-fontify-natively t)
 (setq org-highlight-latex-and-related '(latex script entities))
 
