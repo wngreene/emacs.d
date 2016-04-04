@@ -72,10 +72,11 @@
 (setq org-src-fontify-natively t)
 (setq org-highlight-latex-and-related '(latex script entities))
 
-;; Remove tool bar.
+;; Remove tool bar, scroll bar, menu bar.
 (if window-system
-  (tool-bar-mode -1)
-)
+  (progn (tool-bar-mode -1)
+         (scroll-bar-mode -1)
+         (menu-bar-mode -1)))
 
 ;; Use the ipython interpreter.
 (when (executable-find "ipython")
