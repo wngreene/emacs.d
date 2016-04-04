@@ -151,6 +151,14 @@
 (use-package xml
   :mode (("\\.launch\\'" . xml-mode)))
 
+;; julia.
+(use-package julia-mode
+  :ensure t
+  :mode (("\\.jl\\'" . julia-mode)))
+
+(use-package julia-shell
+  :ensure t)
+
 ;; latex.
 (use-package tex-site
   :ensure auctex
