@@ -119,6 +119,11 @@
 (global-set-key (kbd "C-s-p") 'shrink-window)
 (global-set-key (kbd "C-s-n") 'enlarge-window)
 
+;; winner-mode.
+(winner-mode 1)
+(global-set-key (kbd "C-c j") 'winner-undo)
+(global-set-key (kbd "C-c l") 'winner-redo)
+
 ;; Set line numbers.
 (use-package linum
   :ensure t
