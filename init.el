@@ -139,10 +139,11 @@
 ;; shift + arrow keys
 (use-package windmove
   :config (windmove-default-keybindings 'meta)
-  :bind (("C-M-i" . windmove-up)
-         ("C-M-k" . windmove-down)
-         ("C-M-j" . windmove-left)
-         ("C-M-l" . windmove-right))) 
+  :init
+  :bind* (("C-M-i" . windmove-up)
+          ("C-M-k" . windmove-down)
+          ("C-M-j" . windmove-left)
+          ("C-M-l" . windmove-right)))
 
 ;; CMake
 (use-package cmake-mode
