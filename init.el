@@ -263,6 +263,12 @@
                  (flycheck-add-next-checker 'c/c++-cppcheck
                                             '(warning . c/c++-googlelint))))
 
+;; google-c-style
+(use-package google-c-style
+  :ensure t
+  :init (progn (add-hook 'c-mode-common-hook 'google-set-c-style)
+               (add-hook 'c-mode-common-hook 'google-make-newline-indent)))
+
 ;; Magit.
 (use-package magit
   :ensure t
