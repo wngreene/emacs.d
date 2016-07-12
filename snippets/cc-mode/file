@@ -6,6 +6,6 @@
 
 /**
 * @file `(buffer-name)`
-* @author ${2:W. Nicholas Greene}
+* @author W. Nicholas Greene
 * @date `(format-time-string "%Y-%m-%d %H:%M:%S (%a)" (current-time))`
 */
