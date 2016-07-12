@@ -2,10 +2,10 @@
 # name: file
 # key: file
 # --
-// Copyright `(format-time-string "%Y" (current-time))` Massachusetts Institute of Technology
-
 /**
-* @file `(buffer-name)`
-* @author W. Nicholas Greene
-* @date `(format-time-string "%Y-%m-%d %H:%M:%S (%a)" (current-time))`
-*/
+ * Copyright `(format-time-string "%Y" (current-time))` Massachusetts Institute of Technology
+ * 
+ * @file `(buffer-name)`
+ * @author W. Nicholas Greene
+ * @date `(format-time-string "%Y-%m-%d %H:%M:%S (%a)" (current-time))`
+ */
