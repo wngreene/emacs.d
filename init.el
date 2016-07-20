@@ -178,7 +178,8 @@
                  (setq TeX-auto-save t)
                  (setq TeX-parse-self t)                   
                  (setq-default TeX-master nil)
-                 (setq latex-run-command "pdflatex")))
+                 (setq latex-run-command "pdflatex")
+                 (add-hook 'LaTeX-mode-hook 'turn-on-flyspell)))
 
 ;; doc-view-mode.
 (setq doc-view-resolution 300)
