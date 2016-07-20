@@ -129,6 +129,18 @@
 (global-set-key (kbd "C-c j") 'winner-undo)
 (global-set-key (kbd "C-c l") 'winner-redo)
 
+;; Flyspell modes.
+(add-hook 'c-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'c++-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'python-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'xml-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'java-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'cmake-mode-hook (lambda () (flyspell-prog-mode)))
+(dolist (hook '(text-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode -1))))
+
 ;; Set line numbers.
 (use-package linum
   :ensure t
