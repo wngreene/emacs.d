@@ -489,3 +489,10 @@
 ;;                (setq send-mail-function	'smtpmail-send-it
 ;;                      message-send-mail-function	'smtpmail-send-it
 ;;                      smtpmail-smtp-server "smtp.gmail.com")))
+
+;; langtool.
+(use-package langtool
+  :ensure t
+  :init (setq langtool-language-tool-jar "/home/wng/.local/opt/LanguageTool-3.0/languagetool-commandline.jar"))
+
+;;;
