@@ -193,6 +193,10 @@
                  (setq latex-run-command "pdflatex")
                  (add-hook 'LaTeX-mode-hook 'turn-on-flyspell)))
 
+;; TEMP: For thesis bib.
+(setq reftex-default-bibliography
+      '("/home/wng/Projects/rrg/papers/greene_sm_thesis/main.bib"))
+
 ;; doc-view-mode.
 (setq doc-view-resolution 300)
 
