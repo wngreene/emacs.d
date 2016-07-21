@@ -349,6 +349,16 @@
 (use-package helm-ag
   :ensure t)
 
+;; helm-flyspell
+(use-package helm-flyspell
+  :ensure t
+  :bind (("C-'" . helm-flyspell-correct)))
+
+;; helm-flycheck
+(use-package helm-flycheck
+  :ensure t
+  :bind (("C-c ! h" . helm-flycheck)))
+
 ;; ;; perspective.
 ;; (use-package perspective
 ;;   :ensure t
