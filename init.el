@@ -306,11 +306,7 @@
 (use-package ws-butler
   :ensure t
   :commands ws-butler-mode
-  :init (progn (add-hook 'c-mode-common-hook 'ws-butler-mode)
-               (add-hook 'cc-mode-common-hook 'ws-butler-mode)
-               (add-hook 'c++-mode-common-hook 'ws-butler-mode)
-               (add-hook 'python-mode-hook 'ws-butler-mode)
-               (add-hook 'cython-mode-hook 'ws-butler-mode)))
+  :init (progn (add-hook 'text-mode-hook 'ws-butler-mode)))
 
 ;; Needed for helm-projectile-grep.
 (use-package grep)
