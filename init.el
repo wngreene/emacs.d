@@ -144,7 +144,8 @@
 ;; Set line numbers.
 (use-package linum
   :ensure t
-  :config (add-hook 'text-mode-hook 'linum-mode))
+  :config (progn (add-hook 'text-mode-hook 'linum-mode)
+                 (add-hook 'prog-mode-hook 'linum-mode)))
 
 ;; Show parentheses.
 (require 'paren)
