@@ -328,7 +328,9 @@
 (use-package projectile
   :ensure t
   :init (progn (projectile-global-mode))
-  :config (progn (add-to-list 'projectile-globally-ignored-directories ".git") 
+  :config (progn (add-to-list 'projectile-other-file-alist '("h" "cc"))
+                 (add-to-list 'projectile-other-file-alist '("cc" "h"))
+                 (add-to-list 'projectile-globally-ignored-directories ".git")
                  (add-to-list 'projectile-globally-ignored-files "GPATH")                  
                  (add-to-list 'projectile-globally-ignored-files "GTAGS")                  
                  (add-to-list 'projectile-globally-ignored-files "GRTAGS")                  
