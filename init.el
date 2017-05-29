@@ -106,16 +106,16 @@
 (global-set-key (kbd "M-p") "\C-u1\M-v")
 (global-set-key (kbd "M-n") "\C-u1\C-v")
 
-;; Navigation ijkl.
-(global-set-key (kbd "M-i") 'previous-line)
+;; Navigation jkl;.
+(global-set-key (kbd "M-l") 'previous-line)
 (global-set-key (kbd "M-k") 'next-line)
 (global-set-key (kbd "M-j") 'left-char)
-(global-set-key (kbd "M-l") 'right-char)
+(global-set-key (kbd "M-;") 'right-char)
 
-(global-set-key (kbd "M-I") 'backward-paragraph)
+(global-set-key (kbd "M-L") 'backward-paragraph)
 (global-set-key (kbd "M-K") 'forward-paragraph)
 (global-set-key (kbd "M-J") 'left-word)
-(global-set-key (kbd "M-L") 'right-word)
+(global-set-key (kbd "M-:") 'right-word)
 
 ;; Window resizing.
 (global-set-key (kbd "C-s-b") 'shrink-window-horizontally)
@@ -153,14 +153,13 @@
   :config (show-paren-mode t))
 
 ;; Use windmove to move cursor around split panes.
-;; shift + arrow keys
 (use-package windmove
   :config (windmove-default-keybindings 'meta)
   :init
-  :bind* (("C-M-i" . windmove-up)
+  :bind* (("C-M-l" . windmove-up)
           ("C-M-k" . windmove-down)
           ("C-M-j" . windmove-left)
-          ("C-M-l" . windmove-right)))
+          ("C-M-;" . windmove-right)))
 
 ;; CMake
 (use-package cmake-mode
