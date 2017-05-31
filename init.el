@@ -461,6 +461,12 @@
   ;; :if window-system
   :config (load-theme 'monokai t))
 
+;; Set background to be transparent.
+;; (defun transparent-background ()
+;;   (unless (display-graphic-p (selected-frame))
+;;     (set-face-background 'default "unspecified-bg" (selected-frame))))
+;; (add-hook 'window-setup-hook 'transparent-background)
+
 ;; expand-region.
 (use-package expand-region
   :ensure t
