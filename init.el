@@ -145,7 +145,8 @@
 (use-package linum
   :ensure t
   :config (progn (add-hook 'text-mode-hook 'linum-mode)
-                 (add-hook 'prog-mode-hook 'linum-mode)))
+                 (add-hook 'prog-mode-hook 'linum-mode)
+                 (setq linum-format "%4d \u2502 ")))
 
 ;; Show parentheses.
 (require 'paren)
