@@ -28,15 +28,21 @@
  '(inhibit-startup-screen t)
  '(use-file-dialog nil))
 
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil
-;;                          :strike-through nil :overline nil :underline
-;;                          nil :slant normal :weight normal :height 85 :width
-;;                          normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(magit-branch-local ((t (:foreground "green"))))
+ '(magit-branch-remote ((t (:foreground "cyan"))))
+ '(magit-diff-context-highlight ((((type tty)) (:foreground "default"))))
+ '(magit-diff-file-heading ((((type tty)) nil)))
+ '(magit-diff-hunk-heading ((t (:background "grey50" :foreground "grey30"))))
+ '(magit-diff-hunk-heading-highlight ((t (:background "grey80" :foreground "grey30"))))
+ '(magit-log-author ((t (:foreground "magenta"))))
+ '(magit-section-heading ((t (:foreground "red" :weight bold))))
+ '(magit-section-highlight ((((type tty)) nil)))
+ '(magit-tag ((t (:foreground "orange")))))
 
 ;; Auto refresh.
 (global-auto-revert-mode t)
@@ -462,10 +468,10 @@
   :config (load-theme 'monokai t))
 
 ;; Set background to be transparent.
-;; (defun transparent-background ()
-;;   (unless (display-graphic-p (selected-frame))
-;;     (set-face-background 'default "unspecified-bg" (selected-frame))))
-;; (add-hook 'window-setup-hook 'transparent-background)
+(defun transparent-background ()
+  (unless (display-graphic-p (selected-frame))
+    (set-face-background 'default "unspecified-bg" (selected-frame))))
+(add-hook 'window-setup-hook 'transparent-background)
 
 ;; expand-region.
 (use-package expand-region
