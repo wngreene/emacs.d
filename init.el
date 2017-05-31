@@ -356,7 +356,7 @@
 ;; helm-flyspell
 (use-package helm-flyspell
   :ensure t
-  :bind (("C-'" . helm-flyspell-correct)))
+  :bind (("C-c '" . helm-flyspell-correct)))
 
 ;; helm-flycheck
 (use-package helm-flycheck
