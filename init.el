@@ -78,6 +78,22 @@
 ;; Set some options for compilation mode.
 (setq compilation-scroll-output 'first-error)
 
+;; Set scrolling to 1 line at a time.
+(setq scroll-step 1)
+
+;; Functions to undo fill-paragraph.
+(defun unfill-paragraph ()
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
+
+(defun unfill-region ()
+  (interactive)
+  (let ((fill-column (point-max)))
+        (fill-region (region-beginning) (region-end) nil)))
+
+(global-set-key (kbd "M-Q") 'unfill-paragraph)
+
 ;; org source code highlighting.
 (require 'org)
 (setq org-src-fontify-natively t)
