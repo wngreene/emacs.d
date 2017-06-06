@@ -239,7 +239,9 @@
   :config (c-set-offset 'innamespace 0)
   :mode (("\\.h\\'" . c++-mode)
          ("\\.cu\\'" . c++-mode)
-         ("\\.cl\\'" . c++-mode)))
+         ("\\.cuh\\'" . c++-mode)
+         ("\\.cl\\'" . c++-mode)
+         ("\\.clh\\'" . c++-mode)))
 
 ;; Pair completion.
 (use-package smartparens
