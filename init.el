@@ -63,7 +63,7 @@
 (setq delete-by-moving-to-trash t)
 
 ;; Set dired switches.
-(setq dired-listing-switches "-alh")
+(setq dired-listing-switches "-alh --group-directories-first")
 
 ;; Allow for recursive trashing.
 (setq dired-recursive-deletes 'always)
