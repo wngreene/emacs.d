@@ -497,7 +497,7 @@
   :bind (("C-=" . er/expand-region)
          ("C--" . er/contract-region)))
 
-;; dired-details.
+ ;; dired-details.
 (use-package dired-details
   :ensure t
   :init (setq dired-details-hidden-string "")
@@ -541,3 +541,8 @@
 (use-package langtool
   :ensure t
   :init (setq langtool-language-tool-jar "/home/wng/.local/opt/LanguageTool-3.0/languagetool-commandline.jar"))
+
+ ;; android-mode
+(use-package android-mode
+  :init (setq android-mode-sdk-dir "~/Android/Sdk")
+  :ensure t)
