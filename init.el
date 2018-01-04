@@ -194,6 +194,11 @@
 (use-package yaml-mode
   :ensure t)
 
+;; groovy-mode.
+(use-package groovy-mode
+  :ensure t
+  :mode (("\\.gradle\\'" . groovy-mode)))
+
 ;; xml.
 (use-package xml
   :mode (("\\.launch\\'" . xml-mode)))
