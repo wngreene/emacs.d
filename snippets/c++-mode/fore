@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: fore
+# key: fore
+# --
+for (const ${1:auto}& ${2:value} : ${3:collection}) {
+  $0
+}
