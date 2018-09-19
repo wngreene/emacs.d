@@ -62,6 +62,9 @@
 ;; Move to trash instead of deleting.
 (setq delete-by-moving-to-trash t)
 
+;; On MacOS, need to use the fancier version of ls ("gls") in the coreutils pacakge.
+(setq insert-directory-program "gls" dired-use-ls-dired t)
+
 ;; Set dired switches.
 (setq dired-listing-switches "-alh --group-directories-first")
 
