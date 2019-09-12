@@ -212,6 +212,11 @@
 (use-package julia-shell
   :ensure t)
 
+;; Docker.
+(use-package dockerfile-mode
+  :ensure t
+  :mode (("Dockerfile\\'" . dockerfile-mode)))
+
 ;; latex.
 (use-package tex-site
   :ensure auctex
