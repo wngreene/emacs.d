@@ -108,7 +108,7 @@
 ;; Use the ipython interpreter.
 (when (executable-find "ipython")
   (setq python-shell-interpreter "ipython")
-  (setq python-shell-interpreter-args "-i"))
+  (setq python-shell-interpreter-args "-i --simple-prompt"))
   
 ;; gdb.
 (setq gdb-many-windows t)
