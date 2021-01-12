@@ -8,7 +8,6 @@
 
 ;; Add repos.
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
 (package-initialize)
@@ -277,17 +276,6 @@
   :ensure t
   :config (add-hook 'markdown-mode-hook 'pandoc-mode))
 
-;; Indent highlighting.
-;; (use-package highlight-indentation
-;;   :load-path "~/.emacs.d/Highlight-Indentation-for-Emacs"
-;;   :init (progn (add-hook 'c-mode-hook 'highlight-indentation-mode)
-;;                (add-hook 'c++-mode-hook 'highlight-indentation-mode)
-;;                (add-hook 'python-mode-hook 'highlight-indentation-mode)
-;;                (add-hook 'xml-mode-hook 'highlight-indentation-mode)
-;;                (add-hook 'java-mode-hook 'highlight-indentation-mode)
-;;                (add-hook 'cmake-mode-hook 'highlight-indentation-mode))
-;;   :config (highlight-indentation-mode t))
-
 (use-package highlight-indent-guides
   :ensure t
   :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
@@ -403,28 +391,12 @@
   :ensure t
   :bind (("C-c ! h" . helm-flycheck)))
 
-;; ;; perspective.
-;; (use-package perspective
-;;   :ensure t
-;;   :config (persp-mode))
-
-;; ;; persp-projectile.
-;; (use-package persp-projectile
-;;   :ensure t
-;;   :bind (("C-x x j" . projectile-persp-switch-project)))
-
 ;; semantic.
 (use-package semantic
   :ensure t
   :config (progn (global-semanticdb-minor-mode 1)
                  (global-semantic-idle-scheduler-mode 1)
                  (semantic-mode 1)))
-
-;; ;; auto-complete.
-;; (use-package auto-complete
-;;   :ensure t
-;;   :config (global-auto-complete-mode t)
-;;   :bind ("<C-tab>" . auto-complete))
 
 ;; irony-mode.
 ;; NOTE: You must run irony-install-server once after installation.
@@ -510,19 +482,6 @@
   :bind (("C-=" . er/expand-region)
          ("C--" . er/contract-region)))
 
- ;; dired-details.
-(use-package dired-details
-  :ensure t
-  :init (setq dired-details-hidden-string "")
-  :bind (("C-c C-s" . dired-details-toggle)))
-
-;; ;; ggtags.
-;; (use-package ggtags
-;;   :ensure t
-;;   :init (progn (add-hook 'c-mode-common-hook 'ggtags-mode)
-;;                (add-hook 'cc-mode-common-hook 'ggtags-mode)
-;;                (add-hook 'java-mode-hook 'ggtags-mode)))
-
 ;; ansi-color.
 ;; https://emacs.stackexchange.com/questions/8135/why-does-compilation-buffer-show-control-characters
 (use-package ansi-color
@@ -532,23 +491,6 @@
               (let ((buffer-read-only nil))
                 (ansi-color-apply-on-region (point-min) (point-max))))
             (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)))
-
-;; ;; gnus.
-;; (use-package gnus
-;;   :ensure t
-;;   :init (progn (setq user-mail-address "wnickgreene@gmail.com")
-;;                (setq user-full-name "W. Nicholas Greene")
-;;                (setq gnus-select-method
-;;                      '(nnimap "gmail"
-;;                               (nnimap-address "imap.gmail.com")
-;;                               (nnimap-server-port "imaps")
-;;                               (nnimap-stream ssl)))
-
-;;                (setq smtpmail-smtp-service 587
-;;                      gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\(\\|$\\)\\|^[\"]\"[#'()]")
-;;                (setq send-mail-function	'smtpmail-send-it
-;;                      message-send-mail-function	'smtpmail-send-it
-;;                      smtpmail-smtp-server "smtp.gmail.com")))
 
 ;; langtool.
 (use-package langtool
