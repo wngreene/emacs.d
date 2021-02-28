@@ -25,6 +25,9 @@
  ;; If there is more than one, they won't work right.
  '(image-dired-external-viewer "/usr/bin/geeqie")
  '(inhibit-startup-screen t)
+ '(package-selected-packages
+   (quote
+    (transient gnu-elpa-keyring-update company-irony android-mode langtool expand-region monokai-theme git-gutter-fringe company irony helm-flycheck helm-flyspell helm-ag helm-projectile projectile helm ws-butler graphviz-dot-mode jedi magit google-c-style flycheck yasnippet fill-column-indicator highlight-indent-guides pandoc-mode markdown-mode rainbow-delimiters smartparens pdf-tools dockerfile-mode julia-shell julia-mode groovy-mode yaml-mode cmake-mode use-package)))
  '(use-file-dialog nil))
 
 (custom-set-faces
@@ -51,6 +54,7 @@
 (setq-default tab-width 2)
 (setq-default sh-indentation 2)
 (setq-default css-indent-offset 2)
+(setq-default js-indent-level 2)
 
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
