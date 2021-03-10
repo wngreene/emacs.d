@@ -75,7 +75,7 @@
 (setq dired-auto-revert-buffer t)
 
 ;; Set fill column and auto fill.
-(setq-default fill-column 80)
+(setq-default fill-column 120)
 ;; (setq-default auto-fill-function 'do-auto-fill)
 
 ;; Set some options for compilation mode.
@@ -310,7 +310,7 @@
   :config (progn (setq flycheck-googlelint-verbose "3")
                  (setq flycheck-c/c++-googlelint-executable "cpplint")
                  ;; (setq flycheck-googlelint-root "src")                 
-                 (setq flycheck-googlelint-linelength "80")
+                 (setq flycheck-googlelint-linelength "120")
                  (setq flycheck-googlelint-filter "-build/c++11,-build/header_guard,-build/include_order")
                  (flycheck-add-next-checker 'c/c++-cppcheck
                                             '(warning . c/c++-googlelint))))
