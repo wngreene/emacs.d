@@ -325,11 +325,11 @@
 (use-package cmake-mode
   :ensure t)
 
-;; Jedi.
-(use-package jedi
-  :ensure t
-  :init (setq jedi:complete-on-dot t)
-  :config (add-hook 'python-mode-hook 'jedi:setup))
+;; ;; Jedi.
+;; (use-package jedi
+;;   :ensure t
+;;   :init (setq jedi:complete-on-dot t)
+;;   :config (add-hook 'python-mode-hook 'jedi:setup))
 
 ;; yaml-mode.
 (use-package yaml-mode
