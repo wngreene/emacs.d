@@ -3,7 +3,7 @@
 # key: file
 # --
 /**
- * Copyright `(format-time-string "%Y" (current-time))` Massachusetts Institute of Technology
+ * Copyright `(format-time-string "%Y" (current-time))` ${1:Company}
  * 
  * @file `(buffer-name)`
  * @author W. Nicholas Greene
