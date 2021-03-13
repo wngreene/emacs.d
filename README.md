@@ -13,4 +13,3 @@ emacs . &
 - emacs24
 - cpplint.py
 - pylint
-- languagetool
