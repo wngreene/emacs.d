@@ -6,6 +6,8 @@
   ;; :if window-system
   :config (load-theme 'monokai t))
 
+(set-face-attribute 'lazy-highlight nil :background "grey55")
+
 ;; ansi-color.
 ;; https://emacs.stackexchange.com/questions/8135/why-does-compilation-buffer-show-control-characters
 (use-package ansi-color
