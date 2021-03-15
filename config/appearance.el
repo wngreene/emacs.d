@@ -35,7 +35,7 @@
                  (setq linum-format "%4d \u2502 ")))
 
 ;; Set fill column and auto fill.
-(setq-default fill-column 120)
+(setq-default fill-column 80)
 ;; (setq-default auto-fill-function 'do-auto-fill)
 
 ;; Highlight indents.
