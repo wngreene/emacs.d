@@ -72,6 +72,14 @@
   (setq python-shell-interpreter "ipython")
   (setq python-shell-interpreter-args "-i --simple-prompt"))
 
+;; Bazel.
+(use-package python-mode
+  :mode (("\\.bazel\\'" . python-mode)
+         ("\\.bzl\\'" . python-mode)
+         ("\\BUILD\\'" . python-mode)
+         ("\\WORKSPACE\\'" . python-mode)
+         ))
+
 ;; yaml-mode.
 (use-package yaml-mode
   :ensure t)
