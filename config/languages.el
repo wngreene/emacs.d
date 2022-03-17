@@ -115,3 +115,9 @@
                        TeX-source-correlate-start-server t)
                  (add-hook 'TeX-after-TeX-LaTeX-command-finished-hook
                            #'TeX-revert-document-buffer)))
+
+;; Protobuf.
+(use-package protobuf-mode
+  :ensure t
+  :mode (("\\.proto\\'" . protobuf-mode)
+         ("\\.pbtxt\\'" . protobuf-mode)))
