@@ -18,24 +18,9 @@
   (package-install 'use-package))
 (require 'use-package)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(image-dired-external-viewer "/usr/bin/geeqie")
- '(inhibit-startup-screen t)
- '(package-selected-packages
-   (quote
-    (protobuf-mode magit auctex gnu-elpa-keyring-update company-irony android-mode langtool expand-region monokai-theme git-gutter-fringe company irony helm-flycheck helm-flyspell helm-ag helm-projectile projectile helm ws-butler graphviz-dot-mode jedi google-c-style flycheck yasnippet fill-column-indicator highlight-indent-guides pandoc-mode markdown-mode rainbow-delimiters smartparens pdf-tools dockerfile-mode julia-shell julia-mode groovy-mode yaml-mode cmake-mode use-package)))
- '(use-file-dialog nil))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; Misc stuff.
+(setq inhibit-startup-screen t)
+(setq use-file-dialog nil)
 
 ;; Auto refresh.
 (global-auto-revert-mode t)
@@ -85,3 +70,7 @@
 (load-file (concat user-emacs-directory "config/magit.el"))
 (load-file (concat user-emacs-directory "config/languages.el"))
 (load-file (concat user-emacs-directory "config/linting.el"))
+
+;; "Custom" file stuff for things that emacs automatically saves.
+(setq custom-file (concat user-emacs-directory "config/custom.el"))
+(load custom-file)
