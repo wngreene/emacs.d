@@ -8,3 +8,6 @@ projectile.cache
 irony
 semanticdb
 config/custom.el
+transient
+.emacs.desktop
+.emacs.desktop.lock
