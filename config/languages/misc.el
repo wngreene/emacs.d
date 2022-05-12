@@ -1,4 +1,6 @@
 ;;; Misc languages.
+(setq-default sh-indentation 2)
+(setq-default css-indent-offset 2)
 
 ;; Bazel.
 (use-package bazel
@@ -33,6 +35,11 @@
   :ensure t
   :mode (("\\.proto\\'" . protobuf-mode)
          ("\\.pbtxt\\'" . protobuf-mode)))
+
+;; Javascript.
+(use-package js
+  :ensure t
+  :config (setq js-indent-level 2))
 
 ;; Typescript.
 (use-package typescript-mode
