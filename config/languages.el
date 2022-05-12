@@ -121,3 +121,9 @@
   :ensure t
   :mode (("\\.proto\\'" . protobuf-mode)
          ("\\.pbtxt\\'" . protobuf-mode)))
+
+;; Typescript.
+(use-package typescript-mode
+  :ensure t
+  :config (progn (setq typescript-indent-level 2))
+  :mode (("\\.ts\\'" . typescript-mode)))
