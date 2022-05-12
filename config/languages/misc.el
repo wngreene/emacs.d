@@ -1,7 +1,7 @@
 ;;; Misc languages.
 
 ;; Bazel.
-(use-package bazel-mode
+(use-package bazel
   :mode (("\\.bazel\\'" . bazel-mode)
          ("\\.bzl\\'" . bazel-mode)
          ("\\BUILD\\'" . bazel-mode)
