@@ -26,7 +26,6 @@
 (load-file (concat user-emacs-directory "config/projectile.el"))
 (load-file (concat user-emacs-directory "config/magit.el"))
 (load-file (concat user-emacs-directory "config/coding.el"))
-(load-file (concat user-emacs-directory "config/linting.el"))
 
 ;; "Custom" file stuff for things that emacs automatically saves.
 (setq custom-file (concat user-emacs-directory "config/custom.el"))

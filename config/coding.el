@@ -45,6 +45,34 @@
          ([f10] . gud-next)
          ([f11] . gud-step)))
 
+;; Whitespace butler.
+(use-package ws-butler
+  :ensure t
+  :commands ws-butler-mode
+  :init (progn (add-hook 'text-mode-hook 'ws-butler-mode)
+               (add-hook 'prog-mode-hook 'ws-butler-mode)))
+
+;; Flycheck.
+(use-package flycheck
+  :ensure t
+  :config (progn (add-hook 'after-init-hook #'global-flycheck-mode)
+                 (add-hook 'python-mode-hook (lambda ()
+                                               (flycheck-select-checker 'python-pylint)))
+                 (setq flycheck-python-pylint-executable "pylint")
+                 (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-gcc))))
+
+;; Flyspell modes.
+(add-hook 'c-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'c++-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'python-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'xml-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'java-mode-hook (lambda () (flyspell-prog-mode)))
+(add-hook 'cmake-mode-hook (lambda () (flyspell-prog-mode)))
+(dolist (hook '(text-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode -1))))
+
 (load-file (concat user-emacs-directory "config/languages/cpp.el"))
 (load-file (concat user-emacs-directory "config/languages/python.el"))
 (load-file (concat user-emacs-directory "config/languages/latex.el"))
