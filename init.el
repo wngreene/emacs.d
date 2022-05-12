@@ -18,12 +18,6 @@
   (package-install 'use-package))
 (require 'use-package)
 
-;; Yasnippet.
-(use-package yasnippet
-  :ensure t
-  :init (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-  :config (yas-global-mode t))
-
 ;; Load indidvual configuration files.
 (load-file (concat user-emacs-directory "config/misc.el"))
 (load-file (concat user-emacs-directory "config/appearance.el"))

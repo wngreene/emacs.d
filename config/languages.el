@@ -42,6 +42,12 @@
   :ensure t
   :config (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
+;; Yasnippet.
+(use-package yasnippet
+  :ensure t
+  :init (setq yas-snippet-dirs (list (concat user-emacs-directory "snippets")))
+  :config (yas-global-mode t))
+
 ;; C/C++
 (use-package c++-mode
   :config (c-set-offset 'innamespace 0)
