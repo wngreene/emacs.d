@@ -39,3 +39,7 @@
 (setq dired-listing-switches "-alh --group-directories-first") ;; Set dired switches.
 (setq dired-recursive-deletes 'always) ;; Allow for recursive trashing.
 (setq dired-auto-revert-buffer t) ;; Updates dired buffers. automatically.
+
+;; which-key
+(use-package which-key
+  :ensure t)
