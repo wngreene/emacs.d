@@ -39,12 +39,6 @@
              :force-display desktop-restore-in-current-display
                  :force-onscreen desktop-restore-forces-onscreen)))
 
-;; Dired settings.
-(setq delete-by-moving-to-trash t) ;; Move to trash instead of deleting.
-(setq dired-listing-switches "-alh --group-directories-first") ;; Set dired switches.
-(setq dired-recursive-deletes 'always) ;; Allow for recursive trashing.
-(setq dired-auto-revert-buffer t) ;; Updates dired buffers. automatically.
-
 ;; Functions to undo fill-paragraph.
 (defun unfill-paragraph ()
   (interactive)
