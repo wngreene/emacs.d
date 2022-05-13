@@ -25,6 +25,7 @@
 (load-file (concat user-emacs-directory "config/helm.el"))
 (load-file (concat user-emacs-directory "config/projectile.el"))
 (load-file (concat user-emacs-directory "config/lsp.el"))
+(load-file (concat user-emacs-directory "config/company.el"))
 (load-file (concat user-emacs-directory "config/magit.el"))
 (load-file (concat user-emacs-directory "config/coding.el"))
 
