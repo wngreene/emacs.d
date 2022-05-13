@@ -1,8 +1,13 @@
 ;;; Configuration to C/C++.
 
 ;; C/C++
+(use-package c-mode
+  :config (c-set-offset 'innamespace 0)
+  :hook (c-mode . lsp-deferred))
+
 (use-package c++-mode
   :config (c-set-offset 'innamespace 0)
+  :hook (c++-mode . lsp-deferred)
   :mode (("\\.h\\'" . c++-mode)
          ("\\.cu\\'" . c++-mode)
          ("\\.cuh\\'" . c++-mode)
