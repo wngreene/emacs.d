@@ -42,5 +42,7 @@
 
 ;; which-key
 (use-package which-key
-  :ensure t)
+  :ensure t
+  :config
+  (setq which-key-idle-delay 0.1))
 (which-key-mode)
