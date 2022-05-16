@@ -3,7 +3,8 @@
 (use-package helm
   :ensure t
   :config (progn (helm-autoresize-mode 1)
-                 (setq helm-buffer-max-length nil))
+                 (setq helm-buffer-max-length nil)
+                 (setq helm-ff-skip-boring-files t))
   :bind (("M-x"     . helm-M-x)
          ("C-x C-b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)
