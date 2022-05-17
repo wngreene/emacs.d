@@ -1,5 +1,9 @@
 ;;; Configuration for theme, colors, etc.
 
+;; Turn off menu-bar/tool-bar.
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
 ;; Monokai theme.
 (use-package monokai-theme
   :ensure t
