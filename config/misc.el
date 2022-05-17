@@ -46,3 +46,8 @@
   :init (which-key-mode 1)
   :config
   (setq which-key-idle-delay 0.1))
+
+;; doom-modeline
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
