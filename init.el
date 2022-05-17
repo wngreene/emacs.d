@@ -29,4 +29,4 @@
 
 ;; "Custom" file stuff for things that emacs automatically saves.
 (setq custom-file (concat user-emacs-directory "config/custom.el"))
-(load custom-file)
+(load custom-file 'noerror 'nomessage)
