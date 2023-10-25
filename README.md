@@ -5,11 +5,10 @@ W. Nicholas Greene's emacs configuration. Checkout this repo to your home direct
 the required packages from the package manager:
 
 ```
+pip install --user pylint cpplint
 git clone --recursive https://github.com/wngreene/emacs.d.git ~/.emacs.d
 emacs . &
 ```
 
 ### Requires:
-- emacs24
-- cpplint.py
-- pylint
+- emacs26
