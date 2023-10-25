@@ -11,4 +11,4 @@ emacs . &
 ```
 
 ### Requires:
-- emacs26
+- emacs 27.1
