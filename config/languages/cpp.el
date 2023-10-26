@@ -21,7 +21,7 @@
 
 ;; Flycheck Google cpplint
 (use-package flycheck-google-cpplint
-  :load-path "~/.emacs.d/flycheck-google-cpplint"
+  :ensure t
   :config (progn (setq flycheck-googlelint-verbose "3")
                  (setq flycheck-c/c++-googlelint-executable "cpplint")
                  ;; (setq flycheck-googlelint-root "src")

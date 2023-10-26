@@ -1,3 +1,0 @@
-[submodule "flycheck-google-cpplint"]
-	path = flycheck-google-cpplint
-	url = https://github.com/flycheck/flycheck-google-cpplint.git
