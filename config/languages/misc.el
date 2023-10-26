@@ -39,10 +39,12 @@
 ;; Javascript.
 (use-package js
   :ensure t
+  :hook (js-mode . lsp-deferred)
   :config (setq js-indent-level 2))
 
 ;; Typescript.
 (use-package typescript-mode
   :ensure t
+  :hook (typescript-mode . lsp-deferred)
   :config (progn (setq typescript-indent-level 2))
   :mode (("\\.ts\\'" . typescript-mode)))

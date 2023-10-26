@@ -1,7 +1,8 @@
 ;;; Configuration for python.
 
 (use-package python-mode
-  :ensure t)
+  :ensure t
+  :hook (python-mode . lsp-deferred))
 
 ;; ;; Jedi.
 ;; (use-package jedi
