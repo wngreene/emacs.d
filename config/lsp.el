@@ -1,4 +1,4 @@
-;;; Configuration for lsp-mode.
+$;;; Configuration for lsp-mode.
 
 (use-package lsp-mode
   :ensure t
@@ -8,6 +8,5 @@
   :init
   (add-hook 'c-mode-hook 'lsp)
   (add-hook 'c++-mode-hook 'lsp)
-  (add-hook 'python-mode-hook 'lsp)
   :config
   (lsp-enable-which-key-integration t))
