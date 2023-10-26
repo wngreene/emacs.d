@@ -19,13 +19,13 @@
 (use-package cmake-mode
   :ensure t)
 
-;; Flycheck Google cpplint
-(use-package flycheck-google-cpplint
-  :ensure t
-  :config (progn (setq flycheck-googlelint-verbose "3")
-                 (setq flycheck-c/c++-googlelint-executable "cpplint")
-                 ;; (setq flycheck-googlelint-root "src")
-                 (setq flycheck-googlelint-linelength "120")
-                 (setq flycheck-googlelint-filter "-build/c++11,-build/header_guard,-build/include_order")
-                 (flycheck-add-next-checker 'c/c++-cppcheck
-                                            '(warning . c/c++-googlelint))))
+;; ;; Flycheck Google cpplint
+;; (use-package flycheck-google-cpplint
+;;   :ensure t
+;;   :config (progn (setq flycheck-googlelint-verbose "3")
+;;                  (setq flycheck-c/c++-googlelint-executable "cpplint")
+;;                  ;; (setq flycheck-googlelint-root "src")
+;;                  (setq flycheck-googlelint-linelength "120")
+;;                  (setq flycheck-googlelint-filter "-build/c++11,-build/header_guard,-build/include_order")
+;;                  (flycheck-add-next-checker 'c/c++-cppcheck
+;;                                             '(warning . c/c++-googlelint))))

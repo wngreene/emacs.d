@@ -52,14 +52,14 @@
   :init (progn (add-hook 'text-mode-hook 'ws-butler-mode)
                (add-hook 'prog-mode-hook 'ws-butler-mode)))
 
-;; Flycheck.
-(use-package flycheck
-  :ensure t
-  :config (progn (add-hook 'after-init-hook #'global-flycheck-mode)
-                 (add-hook 'python-mode-hook (lambda ()
-                                               (flycheck-select-checker 'python-pylint)))
-                 (setq flycheck-python-pylint-executable "pylint")
-                 (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-gcc))))
+;; ;; Flycheck.
+;; (use-package flycheck
+;;   :ensure t
+;;   :config (progn (add-hook 'after-init-hook #'global-flycheck-mode)
+;;                  (add-hook 'python-mode-hook (lambda ()
+;;                                                (flycheck-select-checker 'python-pylint)))
+;;                  (setq flycheck-python-pylint-executable "pylint")
+;;                  (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-gcc))))
 
 ;; Flyspell modes.
 (add-hook 'c-mode-hook (lambda () (flyspell-prog-mode)))
