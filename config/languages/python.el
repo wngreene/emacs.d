@@ -4,12 +4,6 @@
   :ensure t
   :hook (python-mode . lsp-deferred))
 
-;; ;; Jedi.
-;; (use-package jedi
-;;   :ensure t
-;;   :init (setq jedi:complete-on-dot t)
-;;   :config (add-hook 'python-mode-hook 'jedi:setup))
-
 ;; pyright language server.
 (use-package lsp-pyright
   :ensure t
