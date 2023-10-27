@@ -6,7 +6,7 @@ should grab the required packages from the package manager:
 
 ```
 # Install dependencies.
-pip install --user pylint cpplint
+pip install --user pylint cpplint black
 
 # Install language servers.
 sudo apt-get install clangd
