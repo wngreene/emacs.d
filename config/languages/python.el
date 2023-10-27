@@ -11,6 +11,7 @@
                           (require 'lsp-pyright)
                           (lsp-deferred))))
 
+;; Black formatter.
 (use-package python-black
   :ensure t
   :after python
@@ -20,3 +21,9 @@
 (when (executable-find "ipython")
   (setq python-shell-interpreter "ipython")
   (setq python-shell-interpreter-args "-i --simple-prompt"))
+
+;; flycheck config.
+(flycheck-add-next-checker 'lsp 'python-pyright)
+(flycheck-add-next-checker 'python-pyright 'python-mypy)
+;;                (add-hook 'python-mode-hook (lambda ()
+;;                                              (flycheck-select-checker 'python-pylint)))

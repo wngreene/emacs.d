@@ -5,12 +5,12 @@ checkout this repo to your home directory as `.emacs.d` and launch emacs. It
 should grab the required packages from the package manager:
 
 ```
-# Install dependencies.
-pip install --user pylint cpplint black
-
 # Install language servers.
 sudo apt-get install clangd
 pip install --user pyright
+
+# Install linters/formatters.
+pip install --user cpplint mypy black
 
 # Clone and run.
 git clone https://github.com/wngreene/emacs.d.git ~/.emacs.d
