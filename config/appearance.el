@@ -5,10 +5,10 @@
 (tool-bar-mode -1)
 
 ;; Theme.
-(use-package spacemacs-theme
+(use-package zenburn-theme
   :ensure t
   ;; :if window-system
-  :config (load-theme 'spacemacs-dark t))
+  :config (load-theme 'zenburn t))
 
 ;; ansi-color.
 ;; https://emacs.stackexchange.com/questions/8135/why-does-compilation-buffer-show-control-characters
