@@ -8,9 +8,6 @@
   :config
   (lsp-enable-which-key-integration t))
 
-(require 'lsp-diagnostics)
-(lsp-diagnostics-flycheck-enable)
-
 (use-package lsp-ui
   :ensure t
   :hook (lsp-mode . lsp-ui-mode)
