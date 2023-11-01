@@ -57,6 +57,9 @@
   :ensure t
   :init (global-flycheck-mode))
 
+(require 'lsp-diagnostics)
+(lsp-diagnostics-flycheck-enable)
+
 ;; Flyspell modes.
 (add-hook 'c-mode-hook (lambda () (flyspell-prog-mode)))
 (add-hook 'c++-mode-hook (lambda () (flyspell-prog-mode)))
