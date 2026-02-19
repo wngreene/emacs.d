@@ -20,3 +20,24 @@ emacs -nw .
 ### Requires:
 - emacs 27.1
 - macOS: GNU coreutils (`brew install coreutils`)
+
+### macOS: Caps Lock as Meta in Terminal Emacs (iTerm2)
+
+Caps Lock is in the same physical position on every keyboard, making it a
+consistent Meta key when running Emacs in a terminal.
+
+**Karabiner-Elements** (`brew install --cask karabiner-elements`):
+- Simple Modifications → All Devices: `caps_lock → right_option`
+- Simple Modifications → External PC keyboard: `left_option → left_command`
+  (makes the physical Alt key act as Command system-wide)
+
+**System Settings → Keyboard → Modifier Keys → Karabiner DriverKit Virtual HID Keyboard**:
+- Leave at defaults (Option → Option, Command → Command)
+
+**iTerm2 → Settings → Profiles → Keys**:
+- Left Option Key: `Normal`
+- Right Option Key: `Esc+`
+
+Result: `Caps Lock + x/i/j/k/l/...` → Meta in Emacs on any keyboard.
+Window resize bindings use `C-c w b/f/p/n` (terminal-compatible alternative
+to `C-s-b/f/p/n` which don't work in terminal Emacs).

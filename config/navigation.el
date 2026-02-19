@@ -1,9 +1,6 @@
 ;;; Configuration for navigation.
 
 ;; Scrolling buffer.
-(global-set-key (kbd "M-s-p") "\C-u1\M-v")
-(global-set-key (kbd "M-s-n") "\C-u1\C-v")
-
 (global-set-key (kbd "M-p") "\C-u1\M-v")
 (global-set-key (kbd "M-n") "\C-u1\C-v")
 
@@ -21,11 +18,11 @@
 (global-set-key (kbd "M-J") 'left-word)
 (global-set-key (kbd "M-L") 'right-word)
 
-;; Window resizing.
-(global-set-key (kbd "C-s-b") 'shrink-window-horizontally)
-(global-set-key (kbd "C-s-f") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-s-p") 'shrink-window)
-(global-set-key (kbd "C-s-n") 'enlarge-window)
+;; Window resizing (C-c w prefix for terminal compatibility).
+(global-set-key (kbd "C-c w b") 'shrink-window-horizontally)
+(global-set-key (kbd "C-c w f") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-c w p") 'shrink-window)
+(global-set-key (kbd "C-c w n") 'enlarge-window)
 
 ;; winner-mode.
 (winner-mode 1)
