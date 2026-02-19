@@ -9,7 +9,8 @@
          ("C-x C-b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)
          ("C-c h i" . helm-semantic-or-imenu)
-         ("C-c h o" . helm-occur)))
+         ("C-c h o" . helm-occur)
+         ("C-c h g" . helm-do-grep-ag)))
 
 ;; helm-projectile.
 (use-package helm-projectile
@@ -18,7 +19,3 @@
 
 ;; Needed for helm-projectile-grep.
 (use-package grep)
-
-;; helm-ag
-(use-package helm-ag
-  :ensure t)

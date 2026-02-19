@@ -32,11 +32,8 @@
 (column-number-mode 1)
 
 ;; Set line numbers.
-(use-package linum
-  :ensure t
-  :config (progn (add-hook 'text-mode-hook 'linum-mode)
-                 (add-hook 'prog-mode-hook 'linum-mode)
-                 (setq linum-format "%4d \u2502 ")))
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Set fill column and auto fill.
 (setq-default fill-column 80)

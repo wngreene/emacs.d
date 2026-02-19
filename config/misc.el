@@ -36,6 +36,8 @@
 
 ;; Dired settings.
 (setq delete-by-moving-to-trash t) ;; Move to trash instead of deleting.
+(when (eq system-type 'darwin)
+  (setq insert-directory-program "gls"))
 (setq dired-listing-switches "-alh --group-directories-first") ;; Set dired switches.
 (setq dired-recursive-deletes 'always) ;; Allow for recursive trashing.
 (setq dired-auto-revert-buffer t) ;; Updates dired buffers. automatically.
