@@ -1,8 +1,8 @@
 ;;; Configuration for navigation.
 
 ;; Scrolling buffer.
-(global-set-key (kbd "M-p") "\C-u1\M-v")
-(global-set-key (kbd "M-n") "\C-u1\C-v")
+(bind-key* "M-p" 'scroll-down-line)
+(bind-key* "M-n" 'scroll-up-line)
 
 ;; Set scrolling to 1 line at a time.
 (setq scroll-step 1)
