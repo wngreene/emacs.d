@@ -57,8 +57,7 @@
   :ensure t
   :config (progn (add-hook 'after-init-hook #'global-flycheck-mode)
                  (add-hook 'python-mode-hook (lambda ()
-                                               (flycheck-select-checker 'python-pylint)))
-                 (setq flycheck-python-pylint-executable "pylint")
+                                               (flycheck-select-checker 'python-ruff)))
                  (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-gcc))))
 
 ;; Flyspell modes.
