@@ -36,11 +36,6 @@
   :ensure t
   :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
 
-;; Fill column indicator.
-(use-package fill-column-indicator
-  :ensure t
-  :init (add-hook `prog-mode-hook 'fci-mode))
-
 ;; doom-modeline
 (use-package doom-modeline
   :ensure t
