@@ -21,10 +21,6 @@ emacs -nw .
 
 ### Requires:
 - emacs 28.1+
-- macOS: GNU coreutils (`brew install coreutils`)
-- macOS: ripgrep (`brew install ripgrep`)
-- cpplint (`pip install --user cpplint`)
-- ruff (`pip install --user ruff`)
 
 ### Completion stack (Vertico + Consult)
 
