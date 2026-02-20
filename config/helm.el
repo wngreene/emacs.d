@@ -16,6 +16,3 @@
 (use-package helm-projectile
   :ensure t
   :config (helm-projectile-on))
-
-;; Needed for helm-projectile-grep.
-(use-package grep)

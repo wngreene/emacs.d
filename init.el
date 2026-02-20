@@ -2,22 +2,11 @@
 
 ;;; Code:
 
-;; Set up use-package.
 (require 'package)
-(setq package-enable-at-startup nil)
-
-;; Add repos.
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
-
 (package-initialize)
-
-;; Bootstrap use-package.
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
 
 ;; Load indidvual configuration files.
 (load-file (concat user-emacs-directory "config/misc.el"))

@@ -38,7 +38,6 @@
 
 ;; Javascript.
 (use-package js
-  :ensure t
   :config (setq js-indent-level 2))
 
 ;; Typescript.

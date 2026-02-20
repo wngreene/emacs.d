@@ -9,12 +9,6 @@
 ;; Set some options for compilation mode.
 (setq compilation-scroll-output 'first-error)
 
-;; Highlight matching pairs of parentheses.
-(require 'paren)
-(use-package paren
-  :ensure t
-  :config (show-paren-mode t))
-
 ;; Pair completion.
 (use-package smartparens
   :ensure t
@@ -37,7 +31,6 @@
 
 ;; gud.
 (use-package gud
-  :ensure t
   :bind (([f5] . gud-cont)
          ([f6] . gud-finish)
          ([f7] . gud-tbreak)
@@ -61,14 +54,8 @@
                  (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-gcc))))
 
 ;; Flyspell modes.
-(add-hook 'c-mode-hook (lambda () (flyspell-prog-mode)))
-(add-hook 'c++-mode-hook (lambda () (flyspell-prog-mode)))
-(add-hook 'python-mode-hook (lambda () (flyspell-prog-mode)))
-(add-hook 'xml-mode-hook (lambda () (flyspell-prog-mode)))
-(add-hook 'java-mode-hook (lambda () (flyspell-prog-mode)))
-(add-hook 'cmake-mode-hook (lambda () (flyspell-prog-mode)))
-(dolist (hook '(text-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode 1))))
+(add-hook 'prog-mode-hook #'flyspell-prog-mode)
+(add-hook 'text-mode-hook #'flyspell-mode)
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
 

@@ -32,8 +32,6 @@
 ;; Use windmove to move cursor around split panes.
 ;; shift + arrow keys
 (use-package windmove
-  :config (windmove-default-keybindings 'meta)
-  :init
   :bind* (("C-M-i" . windmove-up)
           ("C-M-k" . windmove-down)
           ("C-M-j" . windmove-left)

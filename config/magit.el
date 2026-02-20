@@ -15,4 +15,4 @@
   (magit-section-heading ((t (:foreground "red" :weight bold))))
   (magit-section-highlight ((((type tty)) nil)))
   (magit-tag ((t (:foreground "orange"))))
-  :bind (("C-x g" . magit-status)))
+  )
