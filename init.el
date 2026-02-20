@@ -12,8 +12,7 @@
 (load-file (concat user-emacs-directory "config/misc.el"))
 (load-file (concat user-emacs-directory "config/appearance.el"))
 (load-file (concat user-emacs-directory "config/navigation.el"))
-(load-file (concat user-emacs-directory "config/helm.el"))
-(load-file (concat user-emacs-directory "config/projectile.el"))
+(load-file (concat user-emacs-directory "config/completion.el"))
 (load-file (concat user-emacs-directory "config/magit.el"))
 (load-file (concat user-emacs-directory "config/coding.el"))
 

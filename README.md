@@ -11,6 +11,7 @@ pip install --user pylint cpplint
 
 # Install dependencies (macOS).
 brew install coreutils  # Provides gls for dired --group-directories-first support.
+brew install ripgrep    # Required for consult-ripgrep (project-wide search).
 
 # Clone and run.
 git clone https://github.com/wngreene/emacs.d.git ~/.emacs.d
@@ -18,8 +19,38 @@ emacs -nw .
 ```
 
 ### Requires:
-- emacs 27.1
+- emacs 28.1+
 - macOS: GNU coreutils (`brew install coreutils`)
+- macOS: ripgrep (`brew install ripgrep`)
+
+### Completion stack (Vertico + Consult)
+
+Completion is powered by the [minad stack](https://github.com/minad/vertico):
+- **Vertico** — vertical completion UI for all minibuffer commands
+- **Orderless** — space-separated fuzzy matching in any order
+- **Marginalia** — rich annotations next to candidates
+- **Consult** — enhanced search/navigation commands
+- **Embark** — contextual actions on minibuffer candidates
+
+Key bindings:
+| Key | Command | Description |
+|-----|---------|-------------|
+| `M-x` | (built-in) | Enhanced by Vertico automatically |
+| `C-x C-f` | `find-file` | Enhanced by Vertico automatically |
+| `C-x C-b` | `consult-buffer` | Buffers + recent files + bookmarks |
+| `C-c h o` | `consult-line` | Search lines in current buffer |
+| `C-c h g` | `consult-ripgrep` | Ripgrep across project |
+| `C-c h i` | `consult-imenu` | Jump to symbol |
+| `C-.` | `embark-act` | Contextual actions on candidate |
+
+Project navigation uses built-in `project.el` (git root detection):
+| Key | Command |
+|-----|---------|
+| `C-x p f` | Find file in project |
+| `C-x p g` | Grep in project |
+| `C-x p b` | Switch to project buffer |
+| `C-x p p` | Switch project |
+| `C-x p d` | Dired at project root |
 
 ### macOS: Caps Lock as Meta in Terminal Emacs (iTerm2)
 
