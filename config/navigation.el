@@ -24,6 +24,10 @@
 (global-set-key (kbd "C-c w p") 'shrink-window)
 (global-set-key (kbd "C-c w n") 'enlarge-window)
 
+;; Auto-balance windows on split/close (VSCode-like).
+(advice-add 'split-window :after (lambda (&rest _) (balance-windows)))
+(advice-add 'delete-window :after (lambda (&rest _) (balance-windows)))
+
 ;; winner-mode.
 (winner-mode 1)
 (global-set-key (kbd "C-c j") 'winner-undo)
