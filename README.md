@@ -7,11 +7,12 @@ should grab the required packages from the package manager:
 ```
 # Install dependencies (Linux).
 sudo apt-get install clangd
-pip install --user pylint cpplint
+pip install --user cpplint ruff
 
 # Install dependencies (macOS).
 brew install coreutils  # Provides gls for dired --group-directories-first support.
 brew install ripgrep    # Required for consult-ripgrep (project-wide search).
+pip install --user cpplint ruff
 
 # Clone and run.
 git clone https://github.com/wngreene/emacs.d.git ~/.emacs.d
@@ -22,6 +23,8 @@ emacs -nw .
 - emacs 28.1+
 - macOS: GNU coreutils (`brew install coreutils`)
 - macOS: ripgrep (`brew install ripgrep`)
+- cpplint (`pip install --user cpplint`)
+- ruff (`pip install --user ruff`)
 
 ### Completion stack (Vertico + Consult)
 
