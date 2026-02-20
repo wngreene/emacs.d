@@ -4,6 +4,7 @@
 
 ;; Bazel.
 (use-package bazel
+  :ensure t
   :mode (("\\.bazel\\'" . bazel-mode)
          ("\\.bzl\\'" . bazel-mode)
          ("\\BUILD\\'" . bazel-mode)
