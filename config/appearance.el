@@ -23,3 +23,14 @@
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
+
+;; doom-themes (doom-palenight matches iTerm2/Claude Code palette).
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-palenight t)
+  (doom-themes-org-config)
+  ;; Override bg to match iTerm2 dark palette.
+  (set-face-attribute 'default nil :background "#14191F"))
