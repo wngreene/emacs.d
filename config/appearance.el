@@ -4,13 +4,10 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-;; Monokai theme.
-(use-package monokai-theme
-  :ensure t
-  ;; :if window-system
-  :config (load-theme 'monokai t))
-
-(set-face-attribute 'lazy-highlight nil :background "grey55")
+;; No theme — use the terminal's native ANSI color palette (iTerm2).
+(unless (display-graphic-p)
+  (set-face-background 'default "unspecified-bg" (selected-frame))
+  (set-face-foreground 'default "unspecified-fg" (selected-frame)))
 
 ;; ansi-color.
 ;; https://emacs.stackexchange.com/questions/8135/why-does-compilation-buffer-show-control-characters
@@ -22,11 +19,6 @@
                 (ansi-color-apply-on-region (point-min) (point-max))))
             (add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)))
 
-;; Set background to be transparent.
-(defun transparent-background ()
-  (unless (display-graphic-p (selected-frame))
-    (set-face-background 'default "unspecified-bg" (selected-frame))))
-(add-hook 'window-setup-hook 'transparent-background)
 
 ;; Column number mode.
 (column-number-mode 1)
