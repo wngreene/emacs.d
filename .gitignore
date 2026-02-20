@@ -13,3 +13,4 @@ config/custom.el
 transient
 .emacs.desktop
 .emacs.desktop.lock
+projects
