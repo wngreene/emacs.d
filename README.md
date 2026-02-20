@@ -39,7 +39,7 @@ Key bindings:
 | `C-x C-f` | `find-file` | Enhanced by Vertico automatically |
 | `C-x C-b` | `consult-buffer` | Buffers + recent files + bookmarks |
 | `C-c h o` | `consult-line` | Search lines in current buffer |
-| `C-c h g` | `consult-ripgrep` | Ripgrep across project |
+| `C-c h g` | `consult-ripgrep` | Ripgrep (prompts for directory) |
 | `C-c h i` | `consult-imenu` | Jump to symbol |
 | `C-.` | `embark-act` | Contextual actions on candidate |
 
@@ -47,7 +47,7 @@ Project navigation uses built-in `project.el` (git root detection):
 | Key | Command |
 |-----|---------|
 | `C-x p f` | Find file in project |
-| `C-x p g` | Grep in project |
+| `C-x p g` | Grep in project (scoped to git root) |
 | `C-x p b` | Switch to project buffer |
 | `C-x p p` | Switch project |
 | `C-x p d` | Dired at project root |
