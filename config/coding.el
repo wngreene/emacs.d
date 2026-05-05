@@ -62,4 +62,5 @@
 (load-file (concat user-emacs-directory "config/languages/cpp.el"))
 (load-file (concat user-emacs-directory "config/languages/python.el"))
 (load-file (concat user-emacs-directory "config/languages/latex.el"))
+(load-file (concat user-emacs-directory "config/languages/lua.el"))
 (load-file (concat user-emacs-directory "config/languages/misc.el"))
