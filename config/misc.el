@@ -34,6 +34,14 @@
 
 (global-set-key (kbd "M-Q") 'unfill-paragraph)
 
+;; Insert the current date and time at point.
+(defun insert-timestamp ()
+  "Insert the current time in [YYYY-MM-DD HH:MM:SS] format."
+  (interactive)
+  (insert (format-time-string "[%Y-%m-%d %H:%M:%S]")))
+
+(global-set-key (kbd "C-c t") #'insert-timestamp)
+
 ;; Dired settings.
 (setq delete-by-moving-to-trash t) ;; Move to trash instead of deleting.
 (when (eq system-type 'darwin)
