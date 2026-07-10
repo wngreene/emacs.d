@@ -8,8 +8,8 @@
 (column-number-mode 1)
 
 ;; Set line numbers.
-(add-hook 'text-mode-hook 'display-line-numbers-mode)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+;; (add-hook 'text-mode-hook 'display-line-numbers-mode)
+;; (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Set fill column and auto fill.
 (setq-default fill-column 80)
